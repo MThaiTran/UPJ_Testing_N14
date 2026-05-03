@@ -1,0 +1,5 @@
+testCaseId,action,email,loginPassword,currentPassword,newDisplayName,newPassword,avatarPath,expectedBehavior,expectedText
+TC-PRO-01,changeDisplayName,thinhepzaix1@gmail.com,Thinhepzai05!,,Thịnh V.I.P,,,success,Cập nhật hồ sơ thành công!
+TC-PRO-02,updateAvatarUrl,thinhepzaix1@gmail.com,Thinhepzai05!,,,,https://datn-quizapp.web.app/images/default-avatar.png,success,Cập nhật hồ sơ thành công!
+TC-PRO-03,changePassword,thinhepzaix1@gmail.com,Thinhepzai05!,WrongCurrentPass,,NewPass123!,,error,Mật khẩu cũ không đúng
+# TC-PRO-04,changePassword,thinhepzaix1@gmail.com,Thinhepzai05!,Thinhepzai05!,,NewPass123!,,success,Đổi mật khẩu thành công!

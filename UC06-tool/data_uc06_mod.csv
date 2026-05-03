@@ -1,0 +1,6 @@
+testCaseId,email,password,action,targetQuizId,reason
+ADM_MOD_04,admin123@gmail.com,123456,reject_empty,,
+ADM_MOD_02,admin123@gmail.com,123456,reject_with_reason,,Sai nội dung
+ADM_MOD_05,admin123@gmail.com,123456,reject_space,,'   '
+ADM_MOD_01,admin123@gmail.com,123456,approve,,
+ADM_MOD_03,admin123@gmail.com,123456,delete,,

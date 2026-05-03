@@ -1,0 +1,6 @@
+testCaseId,email,password,expectedBehavior,expectedText
+TC-AUT-01,thinhepzaix1@gmail.com,Thinhepzai05!,success,https://datn-quizapp.web.app/
+TC-AUT-02,saiemail@gmail.com,Thinhepzai05!,error,Email hoặc mật khẩu không đúng
+TC-AUT-03,thinhepzaix1@gmail.com,saipass,error,Email hoặc mật khẩu không đúng
+TC-AUT-04,,Thinhepzai05!,validation,Vui lòng nhập email
+TC-AUT-05,thinhepzaix1@gmail.com,,validation,Vui lòng nhập mật khẩu

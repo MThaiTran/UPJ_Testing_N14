@@ -1,0 +1,13 @@
+testCaseId,email,displayName,password,confirmPassword,acceptTerms,expectedBehavior,expectedText
+TC-REG-01,,,Thinhepzai05!,Thinhepzai05!,true,validation,email required
+TC-REG-02,saiemail,TestUser,Thinhepzai05!,Thinhepzai05!,true,validation,email invalid
+TC-REG-03,test@gmail.com,,Thinhepzai05!,Thinhepzai05!,true,validation,display name required
+TC-REG-04,test@gmail.com,TestUser,,,true,validation,password required
+TC-REG-05,test@gmail.com,TestUser,Ab1!,Ab1!,true,validation,password min length
+TC-REG-06,test@gmail.com,TestUser,abc12345!,abc12345!,true,validation,password uppercase
+TC-REG-07,test@gmail.com,TestUser,ABC12345!,ABC12345!,true,validation,password lowercase
+TC-REG-08,test@gmail.com,TestUser,Abcdefgh!,Abcdefgh!,true,validation,password number
+TC-REG-09,test@gmail.com,TestUser,Abcdefg1,Abcdefg1,true,validation,password special
+TC-REG-10,test@gmail.com,TestUser,Thinhepzai05!,Thinhepzai05@,true,validation,password mismatch
+TC-REG-11,test@gmail.com,TestUser,Thinhepzai05!,Thinhepzai05!,false,validation,terms required
+TC-REG-12,test@gmail.com,TestUser,Thinhepzai05!,Thinhepzai05!,true,otp_screen,OTP Verification

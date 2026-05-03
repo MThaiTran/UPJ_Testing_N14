@@ -1,0 +1,5 @@
+testCaseId,email,password,action,targetUser,expectedText
+TC-ADM-01,admin123@gmail.com,123456,smoke,,Admin
+TC-ADM-02,admin123@gmail.com,123456,role,toan@gmail.com,creator
+TC-ADM-03,admin123@gmail.com,123456,ban,toan@gmail.com,
+TC-ADM-04,admin123@gmail.com,123456,delete,toan@gmail.com,

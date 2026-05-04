@@ -1,0 +1,104 @@
+{
+  "source": "./test_sele/data/14_system_test - UC-01.csv",
+  "rating": "N/A",
+  "totalRows": 12,
+  "generatedAt": "2026-04-28T09:32:19.791Z",
+  "rows": [
+    {
+      "id": "CRQ-CRI-28",
+      "objective": "[Thời lượng] Kiểm tra nhập số thập phân",
+      "testData": "Thời lượng: 15.5",
+      "expectedResult": "N/A",
+      "actualResult": "Cho phép nhập dấu phẩy động, tuy nhiên khi nhập số phần thập phân thì lại chặn/ tự xóa chỉ còn lại phần nguyên",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-37",
+      "objective": "[Thẻ tag] Kiểm tra bỏ trống trường tùy chọn",
+      "testData": "N/A",
+      "expectedResult": "Tiếp tục thành công do đây là trường tùy chọn không bắt buộc.",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-38",
+      "objective": "[Thẻ tag] Kiểm tra nhập dữ liệu hợp lệ",
+      "testData": "Thẻ tag: khoa học, tự nhiên",
+      "expectedResult": "Tiếp tục thành công, thông tin thẻ tag được ghi nhận và hiển thị đúng trên hộp xem trước.",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-39",
+      "objective": "[Thẻ tag] Kiểm tra nhập toàn khoảng trắng",
+      "testData": "Thẻ tag: <Toàn cách>",
+      "expectedResult": "Tiếp tục thành công, nhưng hệ thống tự động loại bỏ (trim) các khoảng trắng này và coi như không có thẻ tag nào được thêm.",
+      "actualResult": "Tiếp tục thành công, nhưng do không có trong thông tin xem trước nên cần xem lại sau khi xuất bản",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-40",
+      "objective": "[Thẻ tag] Kiểm tra vượt quá độ dài tối đa",
+      "testData": "Thẻ tag: <Chuỗi rất dài>",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi vượt quá độ dài, hoặc trường nhập liệu chặn không cho gõ thêm.",
+      "actualResult": "Tiếp tục thành công, nhưng do không có trong thông tin xem trước nên cần xem lại sau khi xuất bản",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-42",
+      "objective": "[Thẻ tag] Kiểm tra tiêm mã độc (XSS)",
+      "testData": "Thẻ tag: <script>alert('Lỗi')</script>",
+      "expectedResult": "Tiếp tục thành công nhưng mã HTML/JS bị vô hiệu hóa (sanitize), hiển thị dưới dạng văn bản thuần túy, không kích hoạt popup trên hệ thống.",
+      "actualResult": "Tiếp tục thành công, nhưng do không có trong thông tin xem trước nên cần xem lại sau khi xuất bản",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-52",
+      "objective": "Kiểm tra trạng thái mặc định khi load form.",
+      "testData": "N/A",
+      "expectedResult": "Trạng thái mặc định của các checkbox nên được thiết lập hợp lý (thường là bỏ chọn - unchecked) theo đúng tài liệu thiết kế.",
+      "actualResult": "Tích chọn hợp lý: Công khai, và cho làm lại",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-24",
+      "objective": "Kiểm tra URL đúng định dạng nhưng trả về lỗi (404/500).",
+      "testData": "URL: https://google.com/die_link.html",
+      "expectedResult": "Tiếp tục thành công (nếu hệ thống chỉ check định dạng text). Nếu có tính năng preview (xem trước), UI phải xử lý hiển thị ảnh lỗi/báo lỗi khéo léo thay vì crash form.",
+      "actualResult": "Không có tính năng xem trước",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-30",
+      "objective": "Kiểm tra tên file quá dài.",
+      "testData": "File: ten_file_dai_a...a.pdf",
+      "expectedResult": "N/A",
+      "actualResult": "",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-33",
+      "objective": "Kiểm tra hủy tải lên (Cancel upload).",
+      "testData": "File nặng (VD: 50MB)",
+      "expectedResult": "Quá trình tải lên bị ngắt kết nối (Abort API), trạng thái hộp upload quay về như lúc chưa chọn file.",
+      "actualResult": "N/A",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-05",
+      "objective": "Kiểm tra tiêm mã độc (XSS) vào ô Giải thích.",
+      "testData": "Giải thích: <script>alert('Lỗi')</script>",
+      "expectedResult": "Tiếp tục thành công, không có thông báo lên màn hình",
+      "actualResult": "Thành công tuy nhiên ở giao diện không cho xem trước thông tin về phần giải thích đó",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-GE-28",
+      "objective": "Kiểm tra nhập số thập phân vào điểm.",
+      "testData": "Điểm: 1.5",
+      "expectedResult": "N/A",
+      "actualResult": "Cho phép nhập dấu ., nhưng khi nhập phần thập phân thì bị tự động xóa",
+      "bugCount": ""
+    }
+  ]
+}

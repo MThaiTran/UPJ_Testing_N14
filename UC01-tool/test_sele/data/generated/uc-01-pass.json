@@ -1,0 +1,712 @@
+{
+  "source": "./test_sele/data/14_system_test - UC-01.csv",
+  "rating": "Pass",
+  "totalRows": 88,
+  "generatedAt": "2026-04-28T09:32:19.789Z",
+  "rows": [
+    {
+      "id": "CRQ-NAV-01",
+      "objective": "Kiểm tra điều hướng từ Dashboard quản lý.",
+      "testData": "N/A",
+      "expectedResult": "Vào được trang \"Quiz của tôi\"",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-NAV-02",
+      "objective": "Kiểm tra lối tắt tạo quiz từ màn hình liên quan.",
+      "testData": "N/A",
+      "expectedResult": "Vào được trang \"Quiz của tôi\"",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-NAV-04",
+      "objective": "Kiểm tra nút điều hướng chính trên Header phụ.",
+      "testData": "N/A",
+      "expectedResult": "Vào được trang tạo quiz và bắt đầu tạo quiz",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-NAV-05",
+      "objective": "Kiểm tra chặn bước tiếp theo khi bỏ trống lựa chọn bắt buộc.",
+      "testData": "N/A",
+      "expectedResult": "Bị chặn hoặc có thông báo lỗi",
+      "actualResult": "Bị chặn (Nút tiếp tục được ẩn đi)",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-NAV-06",
+      "objective": "Kiểm tra luồng khởi tạo loại Quiz cơ bản.",
+      "testData": "N/A",
+      "expectedResult": "Vào được trang nhập thông tin cho quiz",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-NAV-07",
+      "objective": "Kiểm tra luồng khởi tạo loại Quiz mở rộng.",
+      "testData": "N/A",
+      "expectedResult": "Vào được trang nhập thông tin cho quiz",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-01",
+      "objective": "Kiểm tra chặn submit khi form trống hoàn toàn.",
+      "testData": "N/A",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi",
+      "actualResult": "Tiếp tục thất bại, nút tiếp tục bị ẩn mờ đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-02",
+      "objective": "Kiểm tra chặn submit khi bỏ trống trường bắt buộc.",
+      "testData": "N/A",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi",
+      "actualResult": "Tiếp tục thất bại, nút tiếp tục bị ẩn mờ đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-06",
+      "objective": "Kiểm tra luồng nhập Tiêu đề hợp lệ (Happy path).",
+      "testData": "Tiêu đề: Quiz test 001",
+      "expectedResult": "Tiếp tục thành công, thông tin hiển thị đúng, không tràn",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-11",
+      "objective": "[Mô tả] Kiểm tra nhập dữ liệu hợp lệ (Happy path)",
+      "testData": "Mô tả: Đây là mô tả hợp lệ test 001",
+      "expectedResult": "Tiếp tục thành công, thông tin hiển thị đúng định dạng trên hộp xem trước, không tràn.",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-13",
+      "objective": "[Mô tả] Kiểm tra tiêm mã độc (XSS) qua tính năng View HTML",
+      "testData": "Mô tả: <script>alert('Lỗi')</script>",
+      "expectedResult": "Tiếp tục thành công, thông tin hiển thị đúng (dưới dạng text thuần túy), không có popup mã độc nào bật lên ở hộp xem trước.",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-14",
+      "objective": "[Danh mục] Kiểm tra bỏ trống lựa chọn bắt buộc",
+      "testData": "N/A",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi yêu cầu phải chọn danh mục cụ thể.",
+      "actualResult": "Tiếp tục thất bại, nút bị ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-15",
+      "objective": "[Danh mục] Kiểm tra lựa chọn danh mục hợp lệ",
+      "testData": "Danh mục: <Lịch sử>",
+      "expectedResult": "Tiếp tục thành công, thông tin tên danh mục hiển thị chính xác trên hộp xem trước.",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-16",
+      "objective": "[Danh mục] Kiểm tra sự tồn tại của phần tử mặc định",
+      "testData": "N/A",
+      "expectedResult": "Danh sách phải có phần tử mặc định mang tính chỉ dẫn như \"Chọn danh mục\" để buộc người dùng thực hiện hành động chọn.",
+      "actualResult": "Có phần tử mặc định",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-19",
+      "objective": "[Danh mục] Kiểm tra điều hướng bằng bàn phím",
+      "testData": "N/A",
+      "expectedResult": "Có thể thay đổi và chọn giá trị danh mục hoàn toàn bằng bàn phím mà không cần dùng chuột.",
+      "actualResult": "Có",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-20",
+      "objective": "[Độ khó] Kiểm tra bỏ trống lựa chọn bắt buộc",
+      "testData": "N/A",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi yêu cầu phải chọn mức độ khó.",
+      "actualResult": "Tiếp tục thất bại, nút bị ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-21",
+      "objective": "[Độ khó] Kiểm tra lựa chọn độ khó hợp lệ",
+      "testData": "Độ khó: <Dễ>",
+      "expectedResult": "Tiếp tục thành công, thông tin độ khó hiển thị chính xác trên hộp xem trước, không tràn chữ.",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-22",
+      "objective": "[Độ khó] Kiểm tra thứ tự sắp xếp logic của danh sách",
+      "testData": "N/A",
+      "expectedResult": "Các phần tử trong danh sách thả xuống phải được sắp xếp theo một trình tự logic (Ví dụ: Dễ -> Trung bình -> Khó) chứ không lộn xộn.",
+      "actualResult": "Có sắp xếp",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-23",
+      "objective": "[Độ khó] Kiểm tra hiển thị trên hộp Xem trước khi thay đổi giá trị",
+      "testData": "Độ khó: <Dễ> -> <Khó>",
+      "expectedResult": "Hộp xem trước thông tin quiz cập nhật mức độ khó mới ngay lập tức mà không cần tải lại trang.",
+      "actualResult": "Có",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-24",
+      "objective": "[Độ khó] Kiểm tra điều hướng và chọn bằng bàn phím",
+      "testData": "N/A",
+      "expectedResult": "Có thể thao tác và chọn giá trị độ khó hoàn toàn bằng bàn phím, đáp ứng tính trợ năng (Accessibility).",
+      "actualResult": "Có",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-25",
+      "objective": "[Thời lượng] Kiểm tra bỏ trống trường bắt buộc",
+      "testData": "N/A",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi, nút tiếp tục bị ẩn mờ đi.",
+      "actualResult": "Tiếp tục thất bại, nút bị ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-26",
+      "objective": "[Thời lượng] Kiểm tra nhập toàn khoảng trắng",
+      "testData": "Thời lượng: <Toàn cách>",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi yêu cầu nhập số.",
+      "actualResult": "Không cho phép nhập dấu cách",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-29",
+      "objective": "[Thời lượng] Kiểm tra nhập số thập phân với 2 dấu phẩy động",
+      "testData": "Thời lượng: 15.5.5",
+      "expectedResult": "Tiếp tục thất bại kèm báo lỗi định dạng không hợp lệ, hoặc hệ thống tự động làm tròn thành số nguyên.",
+      "actualResult": "Không cho phép",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-30",
+      "objective": "[Thời lượng] Kiểm tra giá trị biên dưới hợp lệ",
+      "testData": "Thời lượng: 5",
+      "expectedResult": "Tiếp tục thành công, thời lượng hiển thị chính xác trên hộp xem trước.",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-31",
+      "objective": "[Thời lượng] Kiểm tra giá trị dưới mức tối thiểu",
+      "testData": "Thời lượng: 4",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi \"Thời lượng phải từ 5 đến 120 phút\".",
+      "actualResult": "Có cảnh báo từ 5 tới 120 phút",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-32",
+      "objective": "[Thời lượng] Kiểm tra giá trị biên trên hợp lệ",
+      "testData": "Thời lượng: 120",
+      "expectedResult": "Tiếp tục thành công, thời lượng hiển thị chính xác trên hộp xem trước.",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-33",
+      "objective": "[Thời lượng] Kiểm tra giá trị vượt mức tối đa",
+      "testData": "Thời lượng: 121",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi vượt quá thời lượng cho phép.",
+      "actualResult": "Có cảnh báo từ 5 tới 120 phút",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-34",
+      "objective": "[Thời lượng] Kiểm tra nhập số 0",
+      "testData": "Thời lượng: 0",
+      "expectedResult": "Trường nhập liệu không cho phép số 0",
+      "actualResult": "Không cho phép nhập mỗi số 0",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-36",
+      "objective": "[Thời lượng] Kiểm tra nhập số rất lớn",
+      "testData": "Thời lượng: rất lớn",
+      "expectedResult": "Nhận cảnh bảo hoặc chặn không cho đi tiếp",
+      "actualResult": "Khi số lớn tới 1 ngưỡng cảnh báo 5-120 phút sẽ bị mất tuy nhiên nút tiếp tục sẽ bị chặn",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-43",
+      "objective": "[Ảnh bìa] Kiểm tra chuyển đổi giao diện giữa 2 tùy chọn",
+      "testData": "N/A",
+      "expectedResult": "Giao diện cập nhật tức thì: Khi chọn \"Tải ảnh lên\" sẽ hiện nút chọn file. Khi chọn \"Nhập URL\" nút chọn file biến mất, thay bằng ô textbox nhập link.",
+      "actualResult": "Giao diện có chuyển đổi thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-44",
+      "objective": "[Ảnh bìa - Tải lên] Kiểm tra tải ảnh hợp lệ (Happy path)",
+      "testData": "File: hinh_anh.jpg (2MB)",
+      "expectedResult": "Tiếp tục thành công, hình ảnh được tải lên và hiển thị đầy đủ, chính xác trên hộp xem trước thông tin quiz.",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-48",
+      "objective": "[Ảnh bìa - URL] Kiểm tra nhập URL hợp lệ",
+      "testData": "URL: https://domain.com/anh.jpg",
+      "expectedResult": "Tiếp tục thành công, hệ thống load được ảnh từ link và hiển thị trên hộp xem trước.",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-51",
+      "objective": "[Ảnh bìa - Xem trước] Kiểm tra tỷ lệ khung hình ảnh hiển thị trên hộp Xem trước",
+      "testData": "Ảnh có tỷ lệ: 100x2000px",
+      "expectedResult": "Ảnh phải tự động co giãn, cắt (crop) hoặc hiển thị vừa vặn trong vùng chứa của hộp xem trước, KHÔNG phá vỡ bố cục giao diện hay lấn sang các trường khác.",
+      "actualResult": "Hệ thống tự cắt ảnh",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-54",
+      "objective": "Kiểm tra thao tác bằng bàn phím (Accessibility).",
+      "testData": "N/A",
+      "expectedResult": "Phím Space phải đóng vai trò như thao tác click chuột: Tích/Bỏ tích checkbox thành công.",
+      "actualResult": "Có hỗ trợ",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-55",
+      "objective": "Kiểm tra logic hiển thị ô nhập mật khẩu.",
+      "testData": "N/A",
+      "expectedResult": "Trường nhập mật khẩu xuất hiện ngay bên dưới ô checkbox một cách mượt mà.",
+      "actualResult": "Có xuất hiện",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-56",
+      "objective": "Kiểm tra ràng buộc bắt buộc khi bật Bảo mật (Trường hợp lỗi).",
+      "testData": "Mật khẩu: [Trống]",
+      "expectedResult": "Tiếp tục thất bại, hệ thống báo lỗi yêu cầu nhập mật khẩu cho chế độ bảo mật.",
+      "actualResult": "Nút tiếp tục được ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-58",
+      "objective": "Kiểm tra tạo quiz Bảo mật thành công.",
+      "testData": "Mật khẩu: 123456",
+      "expectedResult": "Tiếp tục thành công, hộp xem trước hiển thị biểu tượng/trạng thái \"Riêng tư\".",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-CRI-59",
+      "objective": "Kiểm tra giới hạn ký tự của mật khẩu bảo mật.",
+      "testData": "Mật khẩu: 12345",
+      "expectedResult": "Tiếp tục thất bại hoặc hiển thị thông báo lỗi về độ dài mật khẩu quy định.",
+      "actualResult": "Nhận cảnh báo mật khẩu 6 ký tự",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-F-02",
+      "objective": "Kiểm tra chức năng Tải mẫu.",
+      "testData": "N/A",
+      "expectedResult": "File được tải xuống thành công. Cấu trúc các cột trong file mẫu (Header) khớp 100% với hướng dẫn trên giao diện (Cột 1 đến Cột 8).",
+      "actualResult": "Mở được file, dữ liệu bên trong đúng định dạng mẫu",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-F-04",
+      "objective": "Kiểm tra tải file thành công (Happy Path).",
+      "testData": "File hợp lệ chứa 5 câu hỏi đầy đủ thông tin.",
+      "expectedResult": "Hệ thống parse file thành công, import 5 câu hỏi vào danh sách. Không báo lỗi.",
+      "actualResult": "Hệ thống import thành công câu hỏi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-F-10",
+      "objective": "Kiểm tra sai kiểu dữ liệu Cột 8 (Điểm).",
+      "testData": "File chứa 1 dòng có Cột 8 = Mười.",
+      "expectedResult": "Hệ thống xử lý lỗi khéo léo (Tự động gán về điểm mặc định là 10 như mô tả), hoặc báo lỗi sai định dạng số tại dòng đó.",
+      "actualResult": "File csv luôn đưa điểm về mặc định (10) nhưng file excel sẽ lỗi font khi bỏ trống, không cho phép tải lên khi điền dạng chữ",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-F-11",
+      "objective": "Kiểm tra lỗi parse chuỗi CSV (Dấu phẩy trong nội dung).",
+      "testData": "Dữ liệu CSV: \"Câu hỏi, có phẩy\", A, B, C, D, A, ,10",
+      "expectedResult": "Dấu phẩy trong nội dung (được bọc bởi ngoặc kép) không làm xô lệch cấu trúc cột. Câu hỏi được import nguyên vẹn.",
+      "actualResult": "File csv đưa ra câu hỏi chính xác, file excel còn lỗi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-F-12",
+      "objective": "Kiểm tra tiêm mã độc (XSS) qua file.",
+      "testData": "Cột 1: <script>alert(1)</script>",
+      "expectedResult": "Hệ thống mã hóa (sanitize) toàn bộ nội dung text đọc được từ file. Không kích hoạt mã độc trên giao diện hiển thị câu hỏi.",
+      "actualResult": "File csv đưa ra câu hỏi chính xác, file excel còn lỗi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-F-13",
+      "objective": "Kiểm tra giới hạn số lượng dòng (Tải trọng lớn).",
+      "testData": "File: 10000_questions.csv",
+      "expectedResult": "Hệ thống có thanh tiến trình (progress bar), không bị Time-out. Nếu vượt giới hạn thiết kế, báo lỗi \"Vượt quá số lượng dòng cho phép\".",
+      "actualResult": "Import file thành công, câu hỏi hiển thị thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-F-15",
+      "objective": "Kiểm tra nối tiếp file",
+      "testData": "File: ch1.csv và ch2.csv",
+      "expectedResult": "Bộ câu hỏi nối tiếp nhau, không bị ghi đè",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-01",
+      "objective": "Kiểm tra chặn luồng khi không thêm tài liệu.",
+      "testData": "N/A",
+      "expectedResult": "Bị chặn",
+      "actualResult": "Nút tiếp tục bị ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-07",
+      "objective": "Kiểm tra nhập Tiêu đề hợp lệ (Happy path).",
+      "testData": "Tiêu đề: Quiz test 001",
+      "expectedResult": "Tiếp tục thành công, thông tin hiển thị đúng, không tràn",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-08",
+      "objective": "Kiểm tra bỏ trống Mô tả (Trường tùy chọn).",
+      "testData": "N/A",
+      "expectedResult": "Tiếp tục thành công",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-09",
+      "objective": "Kiểm tra nhập toàn khoảng trắng vào Mô tả.",
+      "testData": "Mô tả: <Toàn cách hoặc ngắt dòng>",
+      "expectedResult": "Hệ thống tự xử lý là dòng trống",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-12",
+      "objective": "Kiểm tra nhập Mô tả hợp lệ.",
+      "testData": "Mô tả: Đây là mô tả hợp lệ test 001",
+      "expectedResult": "Tiếp tục thành công, thông tin hiển thị đúng định dạng trên hộp xem trước, không tràn.",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-13",
+      "objective": "Kiểm tra dán (paste) dữ liệu phức tạp vào Mô tả.",
+      "testData": "Mô tả: <Văn bản copy từ Word/Excel>",
+      "expectedResult": "Tiếp tục thành công, thông tin hiển thị đúng, layout của hộp xem trước không bị vỡ do chứa các thẻ HTML rác.",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-14",
+      "objective": "Kiểm tra tiêm mã độc (XSS) vào Mô tả.",
+      "testData": "Mô tả: <script>alert('Lỗi')</script>",
+      "expectedResult": "Tiếp tục thành công, thông tin hiển thị đúng (dưới dạng text thuần túy), không có popup mã độc nào bật lên ở hộp xem trước.",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-17",
+      "objective": "Kiểm tra nhập URL hợp lệ (Happy Path).",
+      "testData": "URL: https://www.google.com",
+      "expectedResult": "Tiếp tục thành công, hệ thống ghi nhận đúng đường dẫn.",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-26",
+      "objective": "Kiểm tra tải file hợp lệ (Happy Path).",
+      "testData": "File: tailieu_hop_le.pdf (1MB)",
+      "expectedResult": "File được tải lên thành công, hiển thị đúng tên file và dung lượng trên UI.",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-31",
+      "objective": "Kiểm tra tên file chứa ký tự đặc biệt/tiếng Việt có dấu.",
+      "testData": "File: Báo cáo tài chính @2026!.pdf",
+      "expectedResult": "Tải lên thành công, tên file có thể được hệ thống tự động encode (URL mã hóa) hoặc giữ nguyên mà không bị lỗi font khi tải về lại.",
+      "actualResult": "File không bị lỗi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-DOC-32",
+      "objective": "Kiểm tra tính năng Kéo & Thả (Drag and Drop).",
+      "testData": "File bất kỳ",
+      "expectedResult": "Khung upload đổi màu khi kéo chuột vào (Hover state), thả tay ra file được nhận diện chính xác như khi click nút Chọn file.",
+      "actualResult": "Cho phép",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-01",
+      "objective": "Kiểm tra bỏ trống trường Giải thích (Tùy chọn).",
+      "testData": "Giải thích: <Trống>",
+      "expectedResult": "Cho phép tiếp tục",
+      "actualResult": "Cho phép",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-06",
+      "objective": "Kiểm tra nhập dữ liệu Giải thích hợp lệ (Happy Path).",
+      "testData": "Giải thích: Đây là 1 giải thích hợp lệ",
+      "expectedResult": "Cho phép tiếp tục",
+      "actualResult": "Cho phép",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-07",
+      "objective": "Kiểm tra bỏ trống trường Upload ảnh (Tùy chọn).",
+      "testData": "Ảnh giải thích: <Trống>",
+      "expectedResult": "Cho phép tiếp tục",
+      "actualResult": "Cho phép",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-12",
+      "objective": "Kiểm tra bỏ trống trường URL ảnh (Tùy chọn).",
+      "testData": "URL: Trống",
+      "expectedResult": "Cho phép tiếp tục",
+      "actualResult": "Cho phép",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-13",
+      "objective": "Kiểm tra nhập toàn khoảng trắng vào URL.",
+      "testData": "URL: Chuỗi toàn cách",
+      "expectedResult": "Cho phép tiếp tục, giao diện không hiển thị lên",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-14",
+      "objective": "Kiểm tra giới hạn độ dài của URL.",
+      "testData": "URL: Chuỗi rất dài",
+      "expectedResult": "Khi không phải 1 URL thì không có media được thêm",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-15",
+      "objective": "Kiểm tra nhập URL hợp lệ (Happy Path).",
+      "testData": "URL: <url hợp lệ>, đuôi file cũng hợp lệ",
+      "expectedResult": "Hiển thị lên preview, cho phép tiếp tục",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-18",
+      "objective": "Kiểm tra bỏ trống nội dung câu hỏi bắt buộc.",
+      "testData": "Nội dung câu hỏi: Trống",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Nút tiếp tục bị ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-24",
+      "objective": "Kiểm tra nhập nội dung hợp lệ (Happy Path).",
+      "testData": "Nội dung câu hỏi: Đây là câu hỏi 1",
+      "expectedResult": "Tiếp tục thành công",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-25",
+      "objective": "Kiểm tra bỏ trống điểm số bắt buộc.",
+      "testData": "Điểm: Trống",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Nút tiếp tục bị ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-26",
+      "objective": "Kiểm tra giá trị điểm tối thiểu (Điểm 0).",
+      "testData": "Điểm: 0",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Không cho phép nhập số 0",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-27",
+      "objective": "Kiểm tra giá trị điểm âm (Dưới biên).",
+      "testData": "Điểm: -1",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Cho phép nhập -1, tuy nhiên không cho phép tiếp tục",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-30",
+      "objective": "Kiểm tra giá trị điểm vượt ngưỡng (Tràn số).",
+      "testData": "Điểm: số rất lớn",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Cho phép nhập, tuy nhiên không cho phép tiếp tục",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-GE-31",
+      "objective": "Kiểm tra nhập điểm hợp lệ (Happy Path).",
+      "testData": "Điểm: 10",
+      "expectedResult": "Cho phép tiếp tục",
+      "actualResult": "Cho phép tiếp tục",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-01",
+      "objective": "Kiểm tra chặn người dùng khi bỏ trống tất cả đáp án.",
+      "testData": "Tất cả đáp án: Trống",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Nút tiếp tục bị ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-02",
+      "objective": "Kiểm tra chặn người dùng khi bỏ trống 1 đáp án bất kỳ.",
+      "testData": "A: Trống",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Nút tiếp tục bị ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-03",
+      "objective": "Kiểm tra giới hạn số lượng đáp án tối thiểu.",
+      "testData": "N/A",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Không cho phép xóa, tối thiểu 2 đáp án, và 1 đáp án đúng",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-09",
+      "objective": "Kiểm tra tiêm mã độc (XSS) vào trường đáp án.",
+      "testData": "A: javascript:alert('Hack_URL')/ <script>alert('Lỗi')</script>",
+      "expectedResult": "Không thực thi mã",
+      "actualResult": "Không thực thi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-10",
+      "objective": "Kiểm tra tạo đáp án hợp lệ hoàn chỉnh (Happy Path).",
+      "testData": "Các đáp án hợp lệ, có đáp án đúng",
+      "expectedResult": "Tiếp tục thành công",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-11",
+      "objective": "Kiểm tra quên không đánh dấu đáp án đúng.",
+      "testData": "Các đáp án hợp lệ, không chọn đáp án đúng",
+      "expectedResult": "Thông báo lỗi hoặc bị chặn",
+      "actualResult": "Nút tiếp tục bị ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-12",
+      "objective": "Kiểm tra kịch bản chuẩn",
+      "testData": "Radio: Đúng",
+      "expectedResult": "Tiếp tục thành công, hiển thị đúng",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-13",
+      "objective": "Kiểm tra bỏ trống trường đáp án chính.",
+      "testData": "Đáp án: Trống",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Nút tiếp tục bị ẩn",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-17",
+      "objective": "Kiểm tra tiêm mã độc (XSS) vào trường đáp án.",
+      "testData": "Đáp án: javascript:alert('Hack_URL')/ <script>alert('Lỗi')</script>",
+      "expectedResult": "Không thực thi mã",
+      "actualResult": "Không thực thi mã",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-18",
+      "objective": "Kiểm tra nhập đáp án chính hợp lệ (Happy Path).",
+      "testData": "Đáp án: Đây là 1 đáp án đúng",
+      "expectedResult": "Thành công",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-19",
+      "objective": "Kiểm tra thêm biến thể (đáp án thay thế) rỗng.",
+      "testData": "Biến thể: Trống",
+      "expectedResult": "Nhận thông báo lỗi",
+      "actualResult": "Không có thông báo lỗi, tuy nhiên biến thể không được thêm vào",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-20",
+      "objective": "Kiểm tra thêm biến thể chỉ chứa khoảng trắng.",
+      "testData": "Biến thể: Toàn cách",
+      "expectedResult": "Nhận thông báo lỗi",
+      "actualResult": "Không có thông báo lỗi, tuy nhiên biến thể không được thêm vào",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-23",
+      "objective": "Kiểm tra thêm biến thể hợp lệ.",
+      "testData": "Biến thể: Đây là 1 biến thể",
+      "expectedResult": "Cho phép tiếp tục",
+      "actualResult": "Thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-26",
+      "objective": "Kiểm tra ràng buộc phải có ít nhất một đáp án đúng cho câu hỏi nhiều lựa chọn.",
+      "testData": "N/A",
+      "expectedResult": "Không cho phép tiếp tục",
+      "actualResult": "Nút tiếp tục bị ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-27",
+      "objective": "Xác minh khả năng thiết lập nhiều đáp án đúng đồng thời cho một câu hỏi.",
+      "testData": "N/A",
+      "expectedResult": "Tiếp tục thành công",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-28",
+      "objective": "Kiểm tra chặn tiếp tục khi văn bản không chứa thẻ đánh dấu vùng trống.",
+      "testData": "Văn bản: abc",
+      "expectedResult": "Không cho phép tiếp tục",
+      "actualResult": "Nút tiếp tục bị ẩn đi",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-QI-33",
+      "objective": "Kiểm tra luồng phân tích và tạo câu hỏi điền từ hợp lệ (Happy Path).",
+      "testData": "Văn bản: He is {{ a man }}",
+      "expectedResult": "Thành công, hiển thị đúng",
+      "actualResult": "Thành công, hiển thị đúng",
+      "bugCount": ""
+    },
+    {
+      "id": "CRQ-UP-02",
+      "objective": "",
+      "testData": "N/A",
+      "expectedResult": "Có thể bắt đầu chỉnh sửa",
+      "actualResult": "Có thể bắt đầu chỉnh sửa",
+      "bugCount": ""
+    }
+  ]
+}

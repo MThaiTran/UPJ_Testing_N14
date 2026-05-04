@@ -1,0 +1,680 @@
+{
+  "source": "./test_sele/data/14_system_test - UC-01.csv",
+  "rating": "Fail",
+  "totalRows": 84,
+  "generatedAt": "2026-04-28T09:32:19.790Z",
+  "rows": [
+    {
+      "id": "CRQ-NAV-03",
+      "objective": "Kiểm tra nút Call-to-action (Trạng thái rỗng - Empty State).",
+      "testData": "N/A",
+      "expectedResult": "Vào được trang tạo quiz và bắt đầu tạo quiz",
+      "actualResult": "Không thành công, nhận được trang thông báo lỗi cho đường dẫn /quiz/create",
+      "bugCount": "2"
+    },
+    {
+      "id": "CRQ-CRI-03",
+      "objective": "Kiểm tra nhập liệu bằng khoảng trắng (White space).",
+      "testData": "Tiêu đề: <Toàn cách>",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-04",
+      "objective": "Kiểm tra giới hạn độ dài tối đa của Tiêu đề.",
+      "testData": "Tiêu đề: <Chuỗi rất dài>",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-05",
+      "objective": "Kiểm tra độ co giãn UI khi text quá dài.",
+      "testData": "Tiêu đề: <Chuỗi rất dài>",
+      "expectedResult": "Thông tin hiển thị không bị lỗi, không tràn",
+      "actualResult": "Thông tin bị tràn ra ngoài hộp xem trước thông tin quiz và xuất hiện thanh kéo ngang cho giao diện",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-07",
+      "objective": "[Mô tả] Kiểm tra bỏ trống trường bắt buộc",
+      "testData": "N/A",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi (Nút tiếp tục có thể bị ẩn mờ đi).",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-08",
+      "objective": "[Mô tả] Kiểm tra nhập toàn khoảng trắng / ngắt dòng",
+      "testData": "Mô tả: <Toàn cách hoặc ngắt dòng>",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi (Hệ thống phải nhận diện được đây là dữ liệu rỗng, dù nó sinh ra thẻ HTML <p><br></p>).",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-09",
+      "objective": "[Mô tả] Kiểm tra vượt quá độ dài tối đa",
+      "testData": "Mô tả: <Chuỗi rất dài>",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi vượt quá số ký tự cho phép.",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-10",
+      "objective": "[Mô tả] Kiểm tra hiển thị văn bản siêu dài trên hộp Xem trước",
+      "testData": "Mô tả: <Chuỗi rất dài>",
+      "expectedResult": "Thông tin hiển thị không bị lỗi, không tràn ra ngoài hộp xem trước thông tin quiz (Văn bản phải tự động xuống dòng).",
+      "actualResult": "Khi quá nhiều ngắt dòng sẽ khiến trang web kéo xuống dưới rất nhiều, để lại khoảng trống rất lớn",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-12",
+      "objective": "[Mô tả] Kiểm tra dán định dạng phức tạp (Copy/Paste)",
+      "testData": "Mô tả: <Văn bản copy từ Word/Excel>",
+      "expectedResult": "Tiếp tục thành công, thông tin hiển thị đúng, layout của hộp xem trước không bị vỡ do chứa các thẻ HTML rác.",
+      "actualResult": "Hiển thị vẫn còn bị giữ lại định dạng trước khi copy",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-17",
+      "objective": "[Danh mục] Kiểm tra thứ tự sắp xếp của danh sách",
+      "testData": "N/A",
+      "expectedResult": "Các phần tử trong danh sách thả xuống nên được sắp xếp theo thứ tự bảng chữ cái để người dùng dễ dàng tìm kiếm.",
+      "actualResult": "Chưa theo thứ tự chữ cái",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-18",
+      "objective": "[Danh mục] Kiểm tra hiển thị trên hộp Xem trước khi thay đổi",
+      "testData": "Danh mục: <Toán học> -> <Địa lý>",
+      "expectedResult": "Hộp xem trước thông tin quiz cập nhật tên danh mục mới ngay lập tức mà không bị vỡ layout hay tràn chữ.",
+      "actualResult": "Không bị vỡ chữ, tuy nhiên với trường hợp \"Tiếng anh\" thì bị lỗi",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-27",
+      "objective": "[Thời lượng] Kiểm tra nhập sai định dạng chữ/ký tự",
+      "testData": "Thời lượng: abc!@",
+      "expectedResult": "Trường nhập liệu tự động xóa/chặn không cho gõ, hoặc tiếp tục thất bại kèm báo lỗi sai định dạng số.",
+      "actualResult": "Không cho phép nhập ký tự/ ký tự đặc biệt",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-35",
+      "objective": "[Thời lượng] Kiểm tra nhập số âm",
+      "testData": "Thời lượng: -10",
+      "expectedResult": "Trường nhập liệu chặn không cho gõ dấu trừ -, hoặc tiếp tục thất bại kèm thông báo lỗi ngoài khoảng cho phép.",
+      "actualResult": "Hệ thống cho phép nhập dấu -",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-41",
+      "objective": "[Thẻ tag] Kiểm tra hiển thị văn bản dài trên hộp Xem trước",
+      "testData": "Thẻ tag: <Chuỗi rất dài>",
+      "expectedResult": "Thông tin hiển thị không bị lỗi, các tag tự động xuống dòng hoặc hiển thị gọn gàng, không bị tràn ra ngoài hộp xem trước thông tin quiz.",
+      "actualResult": "Có bị tràn và xuất hiện thanh cuộn ngang",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-45",
+      "objective": "[Ảnh bìa - Tải lên] Kiểm tra tải file vượt quá dung lượng tối đa",
+      "testData": "File: anh_to.png (4MB)",
+      "expectedResult": "Hệ thống chặn không cho tải lên, hiển thị thông báo lỗi \"Kích thước ảnh vượt quá 3072KB\". Tiếp tục thất bại.",
+      "actualResult": "Hệ thống không tải thành công, có thông báo lỗi tuy nhiên thông báo lỗi chỉ chớp nháy trong <1s, không đủ thời gian để đọc lỗi",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-46",
+      "objective": "[Ảnh bìa - Tải lên] Kiểm tra tải file sai định dạng (Giả mạo đuôi)",
+      "testData": "File: virus.exe",
+      "expectedResult": "Hệ thống kiểm tra MIME type và từ chối tải lên, hiển thị thông báo lỗi file không đúng định dạng hình ảnh.",
+      "actualResult": "Hệ thống không tải thành công, có thông báo lỗi tuy nhiên thông báo lỗi chỉ chớp nháy trong <1s, không đủ thời gian để đọc lỗi",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-47",
+      "objective": "[Ảnh bìa - Tải lên] Kiểm tra tải lên file rỗng (0 bytes)",
+      "testData": "File: empty_img.jpg (0KB)",
+      "expectedResult": "Hệ thống từ chối tải lên, báo lỗi tệp tin không hợp lệ hoặc bị hỏng.",
+      "actualResult": "Cho phép tải lên và cho phép preview, nhưng do thực chất không có dữ liệu nên chỉ có icon default",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-49",
+      "objective": "[Ảnh bìa - URL] Kiểm tra nhập URL sai định dạng",
+      "testData": "URL: <Toàn cách> hoặc day_khong_phai_link",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi định dạng URL không hợp lệ.",
+      "actualResult": "Chỉ có icon default",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-50",
+      "objective": "[Ảnh bìa - URL] Kiểm tra nhập URL đúng định dạng nhưng link hỏng (Die)",
+      "testData": "URL: https://domain.com/anh_die.jpg",
+      "expectedResult": "Hiển thị một ảnh mặc định (Placeholder) thay thế cho ảnh bị lỗi, không làm crash form hay vỡ hộp xem trước.",
+      "actualResult": "Chỉ có icon default",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-53",
+      "objective": "Kiểm tra chuyển đổi trạng thái khi click chuột (Toggle).",
+      "testData": "N/A",
+      "expectedResult": "Lần 1: Ô hiển thị dấu tích (Checked). Lần 2: Mất dấu tích (Unchecked). Không bị đơ hoặc lỗi UI.",
+      "actualResult": "Chuyển đổi trạng thái thành công, đối với ô Quyền Riêng tư thì không thay đổi",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-57",
+      "objective": "Kiểm tra giới hạn ký tự của mật khẩu bảo mật.",
+      "testData": "Mật khẩu: <Chuỗi quá dài>",
+      "expectedResult": "Tiếp tục thất bại hoặc hiển thị thông báo lỗi về độ dài mật khẩu quy định.",
+      "actualResult": "Cho phép ký tự rất dài",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-CRI-60",
+      "objective": "Kiểm tra ràng buộc mật khẩu trắng",
+      "testData": "Mật khẩu: toàn dấu cách/ trắng",
+      "expectedResult": "Tiếp tục thất bại hoặc hiển thị thông báo lỗi",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-F-01",
+      "objective": "Kiểm tra chức năng file",
+      "testData": "N/A",
+      "expectedResult": "Thông tin hiển thị không bị tràn, che lấp hay bị vỡ chữ",
+      "actualResult": "Pop-up modal bị che lấp thông tin bởi header",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-F-03",
+      "objective": "Kiểm tra bộ lọc định dạng file (Client-side).",
+      "testData": "File: data.xlsx hoặc virus.exe",
+      "expectedResult": "Hệ thống (trình duyệt) chỉ hiển thị/cho phép chọn file .csv. Nếu cố tình chọn sai, hiển thị lỗi định dạng ngay lập tức.",
+      "actualResult": "Không tải file lên thành công, tuy nhiên thông báo lỗi chỉ chớp nháy <1s, không đủ thời gian để đọc lỗi",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-F-05",
+      "objective": "Kiểm tra file rỗng (Không có dữ liệu câu hỏi).",
+      "testData": "File: empty.csv",
+      "expectedResult": "Hệ thống chặn import, báo lỗi: \"File không chứa dữ liệu\" hoặc \"Vui lòng nhập ít nhất 1 câu hỏi\".",
+      "actualResult": "Không tải file lên thành công, tuy nhiên thông báo lỗi chỉ chớp nháy <1s, không đủ thời gian để đọc lỗi",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-F-06",
+      "objective": "Kiểm tra bỏ trống dữ liệu bắt buộc trong file.",
+      "testData": "File chứa 1 dòng có Cột 1 để trống.",
+      "expectedResult": "Hệ thống báo lỗi chi tiết (Ví dụ: \"Lỗi dòng số 2: Câu hỏi không được để trống\"), hoặc bỏ qua dòng lỗi và import các dòng đúng.",
+      "actualResult": "Tải file lên thành công, với file excel thì lỗi phông, còn với file csv thì thứ tự bị đẩy lên 1 bậc, tức đáp án 1 thế chỗ câu hỏi, ...",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-F-07",
+      "objective": "Kiểm tra sai logic định dạng Cột 2-5 (Đáp án).",
+      "testData": "File chứa 1 dòng có Cột 2 để trống.",
+      "expectedResult": "Hệ thống báo lỗi",
+      "actualResult": "File excel tải lên thất bại, file csv bị đẩy thứ tự lên 1 bậc",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-F-08",
+      "objective": "Kiểm tra sai logic định dạng Cột 6 (Đáp án).",
+      "testData": "File chứa 1 dòng có Cột 6 để trống.",
+      "expectedResult": "Hệ thống báo lỗi",
+      "actualResult": "File excel tải lên thất bại, file csv bị đẩy thứ tự lên 1 bậc",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-F-09",
+      "objective": "Kiểm tra sai logic định dạng Cột 6 (Đáp án đúng).",
+      "testData": "File chứa 1 dòng có Cột 6 = E.",
+      "expectedResult": "Hệ thống báo lỗi tại dòng tương ứng do giá trị không khớp với Enum/danh sách cho phép (Chỉ nhận A/B/C/D).",
+      "actualResult": "File excel tải lên thành công và lỗi font, file csv tải lên không chọn đáp án đúng trong 4 đáp án",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-F-14",
+      "objective": "Kiểm tra giới hạn số lượng dòng (Tải trọng lớn).",
+      "testData": "File: 10000_questions.csv",
+      "expectedResult": "Giao diện không bị vỡ, tràn chữ",
+      "actualResult": "Giao diện do có quá nhiều câu  hỏi khiến phải kéo thanh dọc xuống rất sâu để có thể tiếp tục",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-02",
+      "objective": "Kiểm tra chặn submit form thêm tài liệu rỗng.",
+      "testData": "N/A",
+      "expectedResult": "Bị chặn hoặc có thông báo lỗi",
+      "actualResult": "Có thông báo lỗi tuy nhiên chỉ nháy trong <1s",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-03",
+      "objective": "Kiểm tra bỏ trống Tiêu đề (Trường bắt buộc).",
+      "testData": "N/A",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi",
+      "actualResult": "Có thông báo lỗi tuy nhiên chỉ nháy trong <1s",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-04",
+      "objective": "Kiểm tra nhập toàn khoảng trắng vào Tiêu đề.",
+      "testData": "Tiêu đề: <Toàn cách>",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi",
+      "actualResult": "Có thông báo lỗi tuy nhiên chỉ nháy trong <1s",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-05",
+      "objective": "Kiểm tra giới hạn độ dài tối đa của Tiêu đề (Logic).",
+      "testData": "Tiêu đề: <Chuỗi rất dài>",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-06",
+      "objective": "Kiểm tra độ co giãn giao diện với Tiêu đề siêu dài.",
+      "testData": "Tiêu đề: <Chuỗi rất dài>",
+      "expectedResult": "Thông tin hiển thị không bị lỗi, không tràn",
+      "actualResult": "Thông tin bị tràn ra ngoài hộp xem trước thông tin quiz và xuất hiện thanh kéo ngang cho giao diện",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-10",
+      "objective": "Kiểm tra giới hạn độ dài tối đa của Mô tả (Logic).",
+      "testData": "Mô tả: <Chuỗi rất dài>",
+      "expectedResult": "Tiếp tục thất bại hoặc nhận được thông báo lỗi vượt quá số ký tự cho phép.",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-11",
+      "objective": "Kiểm tra độ co giãn giao diện với Mô tả siêu dài.",
+      "testData": "Mô tả: <Chuỗi rất dài>",
+      "expectedResult": "Thông tin hiển thị không bị lỗi, không tràn ra ngoài hộp xem trước thông tin quiz (Văn bản phải tự động xuống dòng).",
+      "actualResult": "Thông tin bị tràn ra ngoài hộp xem trước thông tin quiz và xuất hiện thanh kéo ngang cho giao diện",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-15",
+      "objective": "Kiểm tra bỏ trống trường bắt buộc.",
+      "testData": "URL: [Trống]",
+      "expectedResult": "Tiếp tục thất bại, nút tiếp tục bị ẩn mờ đi hoặc hệ thống báo lỗi trường URL không được để trống.",
+      "actualResult": "Có thông báo lỗi tuy nhiên chỉ nháy trong <1s",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-16",
+      "objective": "Kiểm tra nhập toàn khoảng trắng.",
+      "testData": "URL: <Toàn khoảng trắng>",
+      "expectedResult": "Tiếp tục thất bại, hệ thống báo lỗi định dạng URL không hợp lệ hoặc thông tin không được để trống.",
+      "actualResult": "Khi nhấn tiếp tục thì bị chặn lại, tuy nhiên hộp thoại ở bên dưới lại thông báo URL hợp lệ",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-18",
+      "objective": "Kiểm tra thiếu giao thức (http/https).",
+      "testData": "URL: www.google.com",
+      "expectedResult": "Hệ thống tự động thêm https:// vào trước chuỗi hợp lệ, HOẶC báo lỗi yêu cầu nhập đầy đủ giao thức.",
+      "actualResult": "Hệ thống không thêm vào",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-19",
+      "objective": "Kiểm tra sai định dạng tên miền (Domain).",
+      "testData": "URL: https://domain_sai hoặc http://test.c",
+      "expectedResult": "Tiếp tục thất bại kèm báo lỗi URL không hợp lệ do sai cấu trúc tên miền.",
+      "actualResult": "Cho phép chuỗi bất kỳ",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-20",
+      "objective": "Kiểm tra URL chứa khoảng trắng ở giữa.",
+      "testData": "URL: https://www.goo gle.com/anh",
+      "expectedResult": "Hệ thống báo lỗi URL không hợp lệ (vì URL tiêu chuẩn không được chứa khoảng trắng trực tiếp, phải encode thành %20).",
+      "actualResult": "Cho phép chuỗi bất kỳ",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-21",
+      "objective": "Kiểm tra URL có chứa tham số (Query Params) phức tạp.",
+      "testData": "URL: https://domain.com/path?id=1&name=test",
+      "expectedResult": "Tiếp tục thành công, hệ thống không bị lỗi khi parse các tham số của URL.",
+      "actualResult": "Cho phép chuỗi bất kỳ",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-22",
+      "objective": "Kiểm tra giới hạn độ dài của URL.",
+      "testData": "URL: <Chuỗi URL dài hơn 2048 ký tự>",
+      "expectedResult": "Tiếp tục thất bại kèm thông báo vượt quá độ dài tối đa, hoặc trường nhập liệu tự động chặn không cho gõ thêm.",
+      "actualResult": "Cho phép chuỗi bất kỳ",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-23",
+      "objective": "Kiểm tra bảo mật (XSS) qua giao thức giả mạo.",
+      "testData": "URL: javascript:alert('Hack_URL')",
+      "expectedResult": "Hệ thống CHẶN NGAY LẬP TỨC do đây không phải giao thức web an toàn, thông báo URL không hợp lệ.",
+      "actualResult": "Cho phép chuỗi bất kỳ",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-DOC-25",
+      "objective": "Kiểm tra bỏ trống trường tải file (Nếu bắt buộc).",
+      "testData": "N/A",
+      "expectedResult": "Hệ thống báo lỗi \"Vui lòng chọn file\" hoặc nút Submit bị ẩn (disable).",
+      "actualResult": "Có thông báo lỗi tuy nhiên chỉ nháy trong <1s",
+      "bugCount": "3"
+    },
+    {
+      "id": "CRQ-DOC-27",
+      "objective": "Kiểm tra tải file rỗng (0 bytes).",
+      "testData": "File: rong.txt (0 KB)",
+      "expectedResult": "Hệ thống từ chối file rỗng, báo lỗi \"File không chứa dữ liệu\" để tránh rác database.",
+      "actualResult": "Cho phép thêm file rỗng",
+      "bugCount": "3"
+    },
+    {
+      "id": "CRQ-DOC-28",
+      "objective": "Kiểm tra tải file vượt giới hạn dung lượng tối đa.",
+      "testData": "File: file_11MB.pdf",
+      "expectedResult": "Giao diện chặn ngay khi vừa chọn file, báo lỗi \"Dung lượng file vượt quá giới hạn (Max: 5MB)\", không call API gọi server.",
+      "actualResult": "Có hiển thị tên file nhưng lại có thông báo lỗi nháy <1s",
+      "bugCount": "3"
+    },
+    {
+      "id": "CRQ-DOC-29",
+      "objective": "Kiểm tra định dạng file không được hỗ trợ.",
+      "testData": "File: app.exe",
+      "expectedResult": "Hộp thoại chọn file của OS tự động lọc (chỉ hiện file .pdf). Nếu cố tình ép up (All files), hệ thống báo lỗi định dạng không hợp lệ.",
+      "actualResult": "Có thông báo lỗi tuy nhiên chỉ nháy trong <1s",
+      "bugCount": "3"
+    },
+    {
+      "id": "CRQ-QI-GE-02",
+      "objective": "Kiểm tra nhập toàn khoảng trắng vào ô Giải thích.",
+      "testData": "Giải thích: <Chuỗi toàn cách>",
+      "expectedResult": "Có validate",
+      "actualResult": "Cho phép tiếp tục, Hộp thoại cho phần giải thích vẫn xuất hiện nhưng không hiện gì",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-GE-03",
+      "objective": "Kiểm tra giới hạn ký tự tối đa của ô Giải thích.",
+      "testData": "Giải thích: <Chuỗi rất dài>",
+      "expectedResult": "Có validate",
+      "actualResult": "Cho phép tiếp tục",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-GE-04",
+      "objective": "Kiểm tra độ co giãn UI khi text Giải thích siêu dài.",
+      "testData": "Giải thích: <Chuỗi rất dài>",
+      "expectedResult": "Giao diện không bị vỡ/ tràn",
+      "actualResult": "Xuất hiện thanh kéo dọc vô tận",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-GE-08",
+      "objective": "Kiểm tra upload Ảnh hợp lệ (Happy Path).",
+      "testData": "Ảnh giải thích: File hợp lệ",
+      "expectedResult": "Cho phép tiếp tục",
+      "actualResult": "Ảnh bị lỗi mất, Không có thông báo ra giao diện, nhưng trong log có log DO NOT HAVE PERMISSION",
+      "bugCount": "3"
+    },
+    {
+      "id": "CRQ-QI-GE-09",
+      "objective": "Kiểm tra upload file sai định dạng (Giả mạo đuôi).",
+      "testData": "Ảnh giải thích: File khác loại",
+      "expectedResult": "Có thông báo lỗi hoặc không cho phép upload",
+      "actualResult": "Không upload thành công, tuy nhiên không có thông báo lỗi trên giao diện, lỗi chỉ hiển thị trong Dev console",
+      "bugCount": "3"
+    },
+    {
+      "id": "CRQ-QI-GE-10",
+      "objective": "Kiểm tra upload file vượt quá dung lượng tối đa.",
+      "testData": "Ảnh giải thích: File lớn hơn yêu cầu",
+      "expectedResult": "Có thông báo lỗi hoặc không cho phép upload",
+      "actualResult": "Không upload thành công, tuy nhiên không có thông báo lỗi trên giao diện, lỗi chỉ hiển thị trong Dev console",
+      "bugCount": "3"
+    },
+    {
+      "id": "CRQ-QI-GE-11",
+      "objective": "Kiểm tra upload file rỗng (0 bytes).",
+      "testData": "Ảnh giải thích: File rỗng/ 0kb",
+      "expectedResult": "Có thông báo lỗi hoặc không cho phép upload",
+      "actualResult": "Không rõ có upload thành công hay không, không có thông báo.\nVì ảnh rỗng nên cũng không có preview, tuy nhiên khi bấm hủy thì giao diện bị treo ở Đang tải lên - 0%",
+      "bugCount": "3"
+    },
+    {
+      "id": "CRQ-QI-GE-16",
+      "objective": "Kiểm tra URL đúng định dạng nhưng không chứa ảnh.",
+      "testData": "URL: <url hợp lệ> nhưng không dẫn tới file : google.com",
+      "expectedResult": "Không hiển thị hoặc thông báo lỗi",
+      "actualResult": "Hiển thị preview thành công, nhưng để trống tất cả dữ liệu ( DL rác )",
+      "bugCount": "3"
+    },
+    {
+      "id": "CRQ-QI-GE-17",
+      "objective": "Kiểm tra bảo mật (XSS) qua giao thức giả mạo trên URL.",
+      "testData": "URL: javascript:alert('Hack_URL')",
+      "expectedResult": "Không cho phép",
+      "actualResult": "Cho phép, preview hiển thị, dev console có nhận được thông báo lỗi liên quan tới lệnh vừa nhập vào",
+      "bugCount": "3"
+    },
+    {
+      "id": "CRQ-QI-GE-19",
+      "objective": "Kiểm tra hiển thị chỉ dẫn trường bắt buộc.",
+      "testData": "Nội dung câu hỏi: Trống",
+      "expectedResult": "Cần có thông báo yêu cầu trường nào là bắt buộc, trường nào tùy chọn",
+      "actualResult": "Không có thông báo, cũng không có dấu * yêu cầu đâu là trường bắt buộc",
+      "bugCount": "3"
+    },
+    {
+      "id": "CRQ-QI-GE-20",
+      "objective": "Kiểm tra nhập toàn khoảng trắng vào câu hỏi.",
+      "testData": "Nội dung câu hỏi: Toàn cách",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Cho phép tiếp tục, giao diện hiển thị trắng",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-GE-21",
+      "objective": "Kiểm tra giới hạn độ dài tối đa (Logic nghiệp vụ).",
+      "testData": "Nội dung câu hỏi: Chuỗi rất dài",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Cho phép tiếp tục",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-GE-22",
+      "objective": "Kiểm tra hiển thị chuỗi siêu dài trên giao diện.",
+      "testData": "Nội dung câu hỏi: Chuỗi rất dài",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Cho phép tiếp tục, giao diện cuộn vô tận nếu chuỗi rất dài",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-GE-23",
+      "objective": "Kiểm tra tấn công mã độc (XSS) qua nội dung.",
+      "testData": "Nội dung câu hỏi: javascript:alert('Hack_URL')/ <script>alert('Lỗi')</script>",
+      "expectedResult": "Không bị thực thi mã độc",
+      "actualResult": "Thành công, không bị thực thi",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-GE-29",
+      "objective": "Kiểm tra nhập ký tự chữ cái/ký hiệu vào điểm.",
+      "testData": "Điểm: abc",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Không cho phép nhập chữ tuy nhiên cho phép nhập 1 số ký hiệu toán học",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-00",
+      "objective": "Kiểm tra đáp án khác nhau",
+      "testData": "Tất cả đáp án: Thái",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Cho phép tiếp tục",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-04",
+      "objective": "Kiểm tra giới hạn số lượng đáp án tối đa.",
+      "testData": "N/A",
+      "expectedResult": "Thông báo giới hạn cho phép",
+      "actualResult": "Cho phép thêm vô hanj",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-05",
+      "objective": "Kiểm tra hiển thị UI khi người dùng tạo quá nhiều đáp án.",
+      "testData": "N/A",
+      "expectedResult": "Thông báo giới hạn cho phép, hoặc giao diện không bị tràn",
+      "actualResult": "Giao diện xuất hiện thanh cuộn vô hạn khi có quá nhiều đáp án",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-06",
+      "objective": "Kiểm tra nhập toàn khoảng trắng vào 1 đáp án.",
+      "testData": "A: Toàn cách",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Cho phép, giao diện hiện rỗng",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-07",
+      "objective": "Kiểm tra giới hạn độ dài ký tự tối đa của 1 đáp án.",
+      "testData": "A: Chuỗi rất dài",
+      "expectedResult": "Thông báo giới hạn cho phép",
+      "actualResult": "Cho phép",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-08",
+      "objective": "Kiểm tra độ co giãn giao diện khi nội dung 1 đáp án siêu dài.",
+      "testData": "A: Chuỗi rất dài",
+      "expectedResult": "Thông báo giới hạn cho phép",
+      "actualResult": "Giao diện xuất hiện thanh cuộn vô hạn khi 1 đáp án có nội dung quá dài",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-14",
+      "objective": "Kiểm tra nhập toàn khoảng trắng vào đáp án chính.",
+      "testData": "Đáp án: Toàn cách",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Cho phép tiếp tục, đáp án trống",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-15",
+      "objective": "Kiểm tra giới hạn độ dài ký tự tối đa của đáp án.",
+      "testData": "Đáp án: Chuỗi rất dài",
+      "expectedResult": "Không cho phép tiếp tục hoặc nhận thông báo lỗi",
+      "actualResult": "Cho phép tiếp tục, đáp án dài vô tận",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-16",
+      "objective": "Kiểm tra độ co giãn UI khi đáp án chính siêu dài.",
+      "testData": "Đáp án: Chuỗi rất dài",
+      "expectedResult": "Thông báo giới hạn cho phép, hoặc giao diện không bị tràn",
+      "actualResult": "Tràn giao diện, xuất hiện thanh cuộn ngang",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-21",
+      "objective": "Kiểm tra giới hạn độ dài tối đa của biến thể.",
+      "testData": "Biến thể: Chuỗi rất dài",
+      "expectedResult": "Nhận thông báo lỗi",
+      "actualResult": "Cho phép thêm",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-22",
+      "objective": "Kiểm tra UI khi nội dung biến thể siêu dài.",
+      "testData": "Biến thể: Chuỗi rất dài",
+      "expectedResult": "Nhận thông báo lỗi",
+      "actualResult": "Cho phép thêm, giao diện tràn ngang",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-24",
+      "objective": "Kiểm tra giới hạn số lượng biến thể tối đa.",
+      "testData": "N/A",
+      "expectedResult": "Không cho phép thêm không giới hạn",
+      "actualResult": "Cho phép thêm không giới hạn biến thể",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-25",
+      "objective": "Kiểm tra UI khi danh sách biến thể quá nhiều.",
+      "testData": "N/A",
+      "expectedResult": "Không cho phép thêm không giới hạn, giao diện không bị tràn",
+      "actualResult": "Giao diện kéo dài vô tận",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-29",
+      "objective": "Kiểm tra xử lý khi nội dung bên trong cặp thẻ rỗng.",
+      "testData": "Văn bản: {{}}",
+      "expectedResult": "Không cho phép tiếp tục",
+      "actualResult": "Tiếp tục thành công",
+      "bugCount": "2"
+    },
+    {
+      "id": "CRQ-QI-30",
+      "objective": "Kiểm tra khả năng reset trạng thái (State) khi xóa bỏ thẻ đánh dấu.",
+      "testData": "Văn bản: {{}} --> abc",
+      "expectedResult": "Cập nhật hiển thị thành công",
+      "actualResult": "Văn bản là abc - không có chỗ trống, nhưng lại có đáp án cho vùng trống",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-31",
+      "objective": "Kiểm tra tính chính xác của văn bản hướng dẫn sử dụng trên UI.",
+      "testData": "N/A",
+      "expectedResult": "Hướng dẫn là cặp ngoặc vuông cho blank",
+      "actualResult": "Cặp ngoặc đúng là 2 dấu nhọn",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-QI-32",
+      "objective": "Kiểm tra khả năng đồng bộ (Re-analyze) khi tăng thêm số lượng chỗ trống.",
+      "testData": "Văn bản: He is {{ a man }}\n\n->> He is {{ a man }} - {{ a }}",
+      "expectedResult": "Cập nhật hiển thị thành công",
+      "actualResult": "Văn bản có 2 chỗ trống tuy nhiên chỉ có 1 đáp án cho 1 chỗ trống",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-UP-01",
+      "objective": "",
+      "testData": "N/A",
+      "expectedResult": "Có thể bắt đầu chỉnh sửa",
+      "actualResult": "Lỗi: Unauthorize với role : Người tạo",
+      "bugCount": "1"
+    },
+    {
+      "id": "CRQ-UP-03",
+      "objective": "",
+      "testData": "Tiêu đề: <> + update",
+      "expectedResult": "Lưu thành công",
+      "actualResult": "Lưu thất bại, lỗi chớp nháy trong < 1s",
+      "bugCount": "2"
+    },
+    {
+      "id": "CRQ-DRF-01",
+      "objective": "Kiểm thử chức năng xuất bản",
+      "testData": "",
+      "expectedResult": "Hệ thống báo thành công",
+      "actualResult": "Hệ thống chớp nháy thông tin về lỗi, tuy nhiên sau khi tải lại trang thì trạng thái đã được chuyển đổi thành chờ duyệt",
+      "bugCount": ""
+    }
+  ]
+}

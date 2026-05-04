@@ -1,0 +1,3 @@
+caseId,quizType,titlePrefix,description,category,difficulty,duration,question,answerA,answerB,answerC,answerD,correctAnswerIndex,expected
+UC01_AUTO_STANDARD_PASS,standard,Quiz test 001,Đây là mô tả hợp lệ test 001,Lịch sử,hard,5,Đây là câu hỏi 1,Lua chon A,Lua chon B,Lua chon C,Lua chon D,0,success
+UC01_AUTO_WITH_MATERIALS_PASS,with-materials,Quiz test 001 Materials,Đây là mô tả hợp lệ test 001,Lịch sử,hard,5,Đây là câu hỏi 1 (materials),Lua chon A,Lua chon B,Lua chon C,Lua chon D,0,success

@@ -1,0 +1,310 @@
+ID,Mục đích,Kỹ thuật sử dụng,Loại test,Các bước thực hiện,Test data,Kết quả mong muốn,Kết quả thực tế,Tester,Ngày test ,Đánh giá ,Số lỗi,Ghi chú,
+CRQ-NAV-01,Kiểm tra điều hướng từ Dashboard quản lý.,Phân tích luồng (Use Case),Chức năng (Điều hướng),"1. Đăng nhập vào người tạo và mở dashboard
+
+2. Chọn vào ""Người tạo"" ở dashboard hoặc thanh header
+",N/A,"Vào được trang ""Quiz của tôi""",Thành công,Thái,29/03/2026,Pass,,,
+CRQ-NAV-02,Kiểm tra lối tắt tạo quiz từ màn hình liên quan.,Phân tích luồng (Use Case),Chức năng (Điều hướng),"1. Mở trang Quiz/ Yêu thích
+
+2. Nhấn vào ""Tạo quiz mới""",N/A,"Vào được trang ""Quiz của tôi""",Thành công,Thái,29/03/2026,Pass,,,
+CRQ-NAV-03,Kiểm tra nút Call-to-action (Trạng thái rỗng - Empty State).,Đoán lỗi (Error Guessing),Chức năng,"1. Từ trang ""Quiz của tôi"", kéo xuống dưới và chọn vào ""Tạo quiz đầu tiên""",N/A,Vào được trang tạo quiz và bắt đầu tạo quiz,"Không thành công, nhận được trang thông báo lỗi cho đường dẫn /quiz/create",Thái,29/03/2026,Fail,2,"2 lỗi do có thể chuyển hướng từ tab người tạo hoặc bấm trong Dash
+Lỗi chỉ xuất hiện khi chưa có quiz nào được tạo",
+CRQ-NAV-04,Kiểm tra nút điều hướng chính trên Header phụ.,Phân tích luồng (Use Case),Chức năng,"1. Từ trang ""Quiz của tôi"", bấm vào ""Tạo quiz mới"" tại header phụ",N/A,Vào được trang tạo quiz và bắt đầu tạo quiz,Thành công,Thái,29/03/2026,Pass,,,
+CRQ-NAV-05,Kiểm tra chặn bước tiếp theo khi bỏ trống lựa chọn bắt buộc.,Kiểm thử tiêu cực,Chức năng,"1. Tại trang tạo quiz, không chọn gì 
+
+2. Nhấn tiếp tục",N/A,Bị chặn hoặc có thông báo lỗi,Bị chặn (Nút tiếp tục được ẩn đi),Thái,29/03/2026,Pass,,,
+CRQ-NAV-06,Kiểm tra luồng khởi tạo loại Quiz cơ bản.,Phân vùng tương đương (Happy path),Chức năng,"1. Tại trang tạo quiz, chọn vào ""Quiz tiêu chuẩn""
+
+2. Nhấn tiếp tục",N/A,Vào được trang nhập thông tin cho quiz,Thành công,Thái,29/03/2026,Pass,,,
+CRQ-NAV-07,Kiểm tra luồng khởi tạo loại Quiz mở rộng.,Phân vùng tương đương (Happy path),Chức năng,"1. Tại trang tạo quiz, chọn vào ""Quiz kèm tài liệu""
+
+2. Nhấn tiếp tục",N/A,Vào được trang nhập thông tin cho quiz,Thành công,Thái,29/03/2026,Pass,,,
+CRQ-CRI-01,Kiểm tra chặn submit khi form trống hoàn toàn.,Phân vùng tương đương,Chức năng,"1. Không nhập vào bất cứ thông tin nào
+
+2. Nhấn tiếp tục",N/A,Tiếp tục thất bại hoặc nhận được thông báo lỗi,"Tiếp tục thất bại, nút tiếp tục bị ẩn mờ đi",Thái,01/04/2026,Pass,,,
+CRQ-CRI-02,Kiểm tra chặn submit khi bỏ trống trường bắt buộc.,Phân vùng tương đương,Chức năng,"1. Bỏ trống ô Tiêu đề và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",N/A,Tiếp tục thất bại hoặc nhận được thông báo lỗi,"Tiếp tục thất bại, nút tiếp tục bị ẩn mờ đi",Thái,01/04/2026,Pass,,,
+CRQ-CRI-03,Kiểm tra nhập liệu bằng khoảng trắng (White space).,Đoán lỗi,Chức năng,"1. Điền thông tin cho ô Tiêu đề và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Tiêu đề: <Toàn cách>,Tiếp tục thất bại hoặc nhận được thông báo lỗi,Tiếp tục thành công,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-04,Kiểm tra giới hạn độ dài tối đa của Tiêu đề.,Giá trị biên,Chức năng,"1. Điền thông tin cho ô Tiêu đề và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Tiêu đề: <Chuỗi rất dài>,Tiếp tục thất bại hoặc nhận được thông báo lỗi,Tiếp tục thành công,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-05,Kiểm tra độ co giãn UI khi text quá dài.,Kiểm thử GUI,UI/UX,"1. Điền thông tin cho ô Tiêu đề và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Tiêu đề: <Chuỗi rất dài>,"Thông tin hiển thị không bị lỗi, không tràn",Thông tin bị tràn ra ngoài hộp xem trước thông tin quiz và xuất hiện thanh kéo ngang cho giao diện,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-06,Kiểm tra luồng nhập Tiêu đề hợp lệ (Happy path).,Phân vùng tương đương,Chức năng,"1. Điền thông tin cho ô Tiêu đề và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Tiêu đề: Quiz test 001,"Tiếp tục thành công, thông tin hiển thị đúng, không tràn",Tiếp tục thành công,Thái,01/04/2026,Pass,,,
+CRQ-CRI-07,[Mô tả] Kiểm tra bỏ trống trường bắt buộc,Phân vùng tương đương,Chức năng,"1. Bỏ trống ô Mô tả quiz và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",N/A,Tiếp tục thất bại hoặc nhận được thông báo lỗi (Nút tiếp tục có thể bị ẩn mờ đi).,Tiếp tục thành công,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-08,[Mô tả] Kiểm tra nhập toàn khoảng trắng / ngắt dòng,Đoán lỗi,Chức năng,"1. Điền toàn dấu cách hoặc nhấn Enter (xuống dòng) liên tục cho ô Mô tả quiz và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Mô tả: <Toàn cách hoặc ngắt dòng>,"Tiếp tục thất bại hoặc nhận được thông báo lỗi (Hệ thống phải nhận diện được đây là dữ liệu rỗng, dù nó sinh ra thẻ HTML <p><br></p>).",Tiếp tục thành công,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-09,[Mô tả] Kiểm tra vượt quá độ dài tối đa,Giá trị biên,Chức năng,"1. Điền thông tin cho ô Mô tả quiz bằng một chuỗi rất dài và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Mô tả: <Chuỗi rất dài>,Tiếp tục thất bại hoặc nhận được thông báo lỗi vượt quá số ký tự cho phép.,Tiếp tục thành công,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-10,[Mô tả] Kiểm tra hiển thị văn bản siêu dài trên hộp Xem trước,Kiểm thử GUI,UI/UX,"1. Điền thông tin cho ô Mô tả quiz bằng một chuỗi rất dài (hoặc một từ dài không có dấu cách) và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Mô tả: <Chuỗi rất dài>,"Thông tin hiển thị không bị lỗi, không tràn ra ngoài hộp xem trước thông tin quiz (Văn bản phải tự động xuống dòng).","Khi quá nhiều ngắt dòng sẽ khiến trang web kéo xuống dưới rất nhiều, để lại khoảng trống rất lớn",Thái,01/04/2026,Fail,1,,
+CRQ-CRI-11,[Mô tả] Kiểm tra nhập dữ liệu hợp lệ (Happy path),Phân vùng tương đương,Chức năng,"1. Điền thông tin hợp lệ (có in đậm, in nghiêng) cho ô Mô tả quiz và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Mô tả: Đây là mô tả hợp lệ test 001,"Tiếp tục thành công, thông tin hiển thị đúng định dạng trên hộp xem trước, không tràn.",Tiếp tục thành công,Thái,01/04/2026,Pass,,,
+CRQ-CRI-12,[Mô tả] Kiểm tra dán định dạng phức tạp (Copy/Paste),Đoán lỗi,Chức năng,"1. Dán một đoạn văn bản có chứa bảng biểu hoặc màu nền copy từ phần mềm khác (như MS Word) vào ô Mô tả quiz và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Mô tả: <Văn bản copy từ Word/Excel>,"Tiếp tục thành công, thông tin hiển thị đúng, layout của hộp xem trước không bị vỡ do chứa các thẻ HTML rác.",Hiển thị vẫn còn bị giữ lại định dạng trước khi copy,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-13,[Mô tả] Kiểm tra tiêm mã độc (XSS) qua tính năng View HTML,Đoán lỗi,Bảo mật,"1. Chọn chế độ HTML </>, điền mã script độc hại vào ô Mô tả quiz và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Mô tả: <script>alert('Lỗi')</script>,"Tiếp tục thành công, thông tin hiển thị đúng (dưới dạng text thuần túy), không có popup mã độc nào bật lên ở hộp xem trước.",Thành công,Thái,01/04/2026,Pass,,,
+CRQ-CRI-14,[Danh mục] Kiểm tra bỏ trống lựa chọn bắt buộc,Kiểm thử tiêu cực,Chức năng,"1. Để nguyên ô Danh mục ở giá trị mặc định ""Chọn danh mục"" và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",N/A,Tiếp tục thất bại hoặc nhận được thông báo lỗi yêu cầu phải chọn danh mục cụ thể.,"Tiếp tục thất bại, nút bị ẩn đi",Thái,01/04/2026,Pass,,,
+CRQ-CRI-15,[Danh mục] Kiểm tra lựa chọn danh mục hợp lệ,Phân vùng tương đương,Chức năng,"1. Chọn một danh mục bất kỳ trong 10 giá trị và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Danh mục: <Lịch sử>,"Tiếp tục thành công, thông tin tên danh mục hiển thị chính xác trên hộp xem trước.",Thành công,Thái,01/04/2026,Pass,,,
+CRQ-CRI-16,[Danh mục] Kiểm tra sự tồn tại của phần tử mặc định,Tuân thủ giao diện (GUI),UI/UX,"1. Nhấn vào ô Danh mục để mở danh sách thả xuống
+
+2. Quan sát phần tử đầu tiên của danh sách",N/A,"Danh sách phải có phần tử mặc định mang tính chỉ dẫn như ""Chọn danh mục"" để buộc người dùng thực hiện hành động chọn.",Có phần tử mặc định,Thái,01/04/2026,Pass,,,
+CRQ-CRI-17,[Danh mục] Kiểm tra thứ tự sắp xếp của danh sách,Tuân thủ giao diện (GUI),UI/UX,"1. Nhấn vào ô Danh mục để hiển thị danh sách 10 giá trị
+
+2. Kiểm tra thứ tự hiển thị của các tên danh mục",N/A,Các phần tử trong danh sách thả xuống nên được sắp xếp theo thứ tự bảng chữ cái để người dùng dễ dàng tìm kiếm.,Chưa theo thứ tự chữ cái,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-18,[Danh mục] Kiểm tra hiển thị trên hộp Xem trước khi thay đổi,Chuyển đổi trạng thái,UI/UX,"1. Chọn danh mục A, sau đó đổi sang chọn danh mục B
+
+2. Quan sát hộp xem trước thông tin quiz",Danh mục: <Toán học> -> <Địa lý>,Hộp xem trước thông tin quiz cập nhật tên danh mục mới ngay lập tức mà không bị vỡ layout hay tràn chữ.,"Không bị vỡ chữ, tuy nhiên với trường hợp ""Tiếng anh"" thì bị lỗi",Thái,01/04/2026,Fail,1,"Khi chuyển sang danh mục tiếng anh, hộp thoại hiển thị lỗi: createQuiz.info.categoryOptions.Tiếng Anh thay vì Tiếng Anh",
+CRQ-CRI-19,[Danh mục] Kiểm tra điều hướng bằng bàn phím,Tuân thủ giao diện (GUI),UI/UX,"1. Dùng phím Tab để di chuyển tiêu điểm (focus) vào ô Danh mục
+
+2. Dùng phím mũi tên lên/xuống để thay đổi lựa chọn",N/A,Có thể thay đổi và chọn giá trị danh mục hoàn toàn bằng bàn phím mà không cần dùng chuột.,Có ,Thái,01/04/2026,Pass,,,AppxD - Navigation
+CRQ-CRI-20,[Độ khó] Kiểm tra bỏ trống lựa chọn bắt buộc,Kiểm thử tiêu cực,Chức năng,"1. Để nguyên ô Độ khó ở giá trị mặc định ""Chọn mức độ khó"" và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",N/A,Tiếp tục thất bại hoặc nhận được thông báo lỗi yêu cầu phải chọn mức độ khó.,"Tiếp tục thất bại, nút bị ẩn đi",Thái,01/04/2026,Pass,,,
+CRQ-CRI-21,[Độ khó] Kiểm tra lựa chọn độ khó hợp lệ,Phân vùng tương đương,Chức năng,"1. Chọn một mức độ khó bất kỳ trong 3 giá trị và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Độ khó: <Dễ>,"Tiếp tục thành công, thông tin độ khó hiển thị chính xác trên hộp xem trước, không tràn chữ.",Thành công,Thái,01/04/2026,Pass,,,
+CRQ-CRI-22,[Độ khó] Kiểm tra thứ tự sắp xếp logic của danh sách,Tuân thủ giao diện (GUI),UI/UX,"1. Nhấn vào ô Độ khó để mở danh sách thả xuống
+
+2. Quan sát thứ tự hiển thị của các mức độ khó",N/A,Các phần tử trong danh sách thả xuống phải được sắp xếp theo một trình tự logic (Ví dụ: Dễ -> Trung bình -> Khó) chứ không lộn xộn.,Có sắp xếp,Thái,01/04/2026,Pass,,,
+CRQ-CRI-23,[Độ khó] Kiểm tra hiển thị trên hộp Xem trước khi thay đổi giá trị,Chuyển đổi trạng thái,UI/UX,"1. Chọn độ khó mức 1, sau đó đổi sang chọn độ khó mức 3
+
+2. Quan sát hộp xem trước thông tin quiz",Độ khó: <Dễ> -> <Khó>,Hộp xem trước thông tin quiz cập nhật mức độ khó mới ngay lập tức mà không cần tải lại trang.,Có,Thái,01/04/2026,Pass,,,
+CRQ-CRI-24,[Độ khó] Kiểm tra điều hướng và chọn bằng bàn phím,Tuân thủ giao diện (GUI),UI/UX,"1. Dùng phím Tab để di chuyển tiêu điểm (focus) vào ô Độ khó
+
+2. Dùng phím mũi tên lên/xuống để thay đổi lựa chọn",N/A,"Có thể thao tác và chọn giá trị độ khó hoàn toàn bằng bàn phím, đáp ứng tính trợ năng (Accessibility).",Có,Thái,01/04/2026,Pass,,,
+CRQ-CRI-25,[Thời lượng] Kiểm tra bỏ trống trường bắt buộc,Phân vùng tương đương,Chức năng,"1. Bỏ trống ô Thời lượng và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",N/A,"Tiếp tục thất bại hoặc nhận được thông báo lỗi, nút tiếp tục bị ẩn mờ đi.","Tiếp tục thất bại, nút bị ẩn đi",Thái,01/04/2026,Pass,,,
+CRQ-CRI-26,[Thời lượng] Kiểm tra nhập toàn khoảng trắng,Đoán lỗi,Chức năng,"1. Điền thông tin cho ô Thời lượng toàn dấu cách và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thời lượng: <Toàn cách>,Tiếp tục thất bại hoặc nhận được thông báo lỗi yêu cầu nhập số.,Không cho phép nhập dấu cách,Thái,01/04/2026,Pass,,,
+CRQ-CRI-27,[Thời lượng] Kiểm tra nhập sai định dạng chữ/ký tự,Đoán lỗi,Chức năng,"1. Điền ký tự chữ cái hoặc ký tự đặc biệt cho ô Thời lượng và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thời lượng: abc!@,"Trường nhập liệu tự động xóa/chặn không cho gõ, hoặc tiếp tục thất bại kèm báo lỗi sai định dạng số.",Không cho phép nhập ký tự/ ký tự đặc biệt,Thái,01/04/2026,Fail,1,"Cho phép nhập các dấu +, - và chữ e, tuy nhiên khi xuất hiện các dấu này thì nút tiếp tục bị chặn",
+CRQ-CRI-28,[Thời lượng] Kiểm tra nhập số thập phân,Kiểm thử tiêu cực,Chức năng,"1. Điền thông tin cho ô Thời lượng là số thập phân và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thời lượng: 15.5,N/A,"Cho phép nhập dấu phẩy động, tuy nhiên khi nhập số phần thập phân thì lại chặn/ tự xóa chỉ còn lại phần nguyên",Thái,01/04/2026,N/A,,Không đánh giá do không có mô tả hệ thống có cho phép phút lẻ sang giây hay không,
+CRQ-CRI-29,[Thời lượng] Kiểm tra nhập số thập phân với 2 dấu phẩy động,Kiểm thử tiêu cực,Chức năng,"1. Điền thông tin cho ô Thời lượng là số thập phân và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thời lượng: 15.5.5,"Tiếp tục thất bại kèm báo lỗi định dạng không hợp lệ, hoặc hệ thống tự động làm tròn thành số nguyên.",Không cho phép,Thái,01/04/2026,Pass,,,
+CRQ-CRI-30,[Thời lượng] Kiểm tra giá trị biên dưới hợp lệ,Giá trị biên,Chức năng,"1. Điền thông tin cho ô Thời lượng bằng giá trị tối thiểu cho phép và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thời lượng: 5,"Tiếp tục thành công, thời lượng hiển thị chính xác trên hộp xem trước.",Tiếp tục thành công,Thái,01/04/2026,Pass,,,
+CRQ-CRI-31,[Thời lượng] Kiểm tra giá trị dưới mức tối thiểu,Giá trị biên,Chức năng,"1. Điền thông tin cho ô Thời lượng bé hơn mức cho phép 1 đơn vị và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thời lượng: 4,"Tiếp tục thất bại hoặc nhận được thông báo lỗi ""Thời lượng phải từ 5 đến 120 phút"".",Có cảnh báo từ 5 tới 120 phút,Thái,01/04/2026,Pass,,,
+CRQ-CRI-32,[Thời lượng] Kiểm tra giá trị biên trên hợp lệ,Giá trị biên,Chức năng,"1. Điền thông tin cho ô Thời lượng bằng giá trị tối đa cho phép và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thời lượng: 120,"Tiếp tục thành công, thời lượng hiển thị chính xác trên hộp xem trước.",Tiếp tục thành công,Thái,01/04/2026,Pass,,,
+CRQ-CRI-33,[Thời lượng] Kiểm tra giá trị vượt mức tối đa,Giá trị biên,Chức năng,"1. Điền thông tin cho ô Thời lượng lớn hơn mức cho phép 1 đơn vị và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thời lượng: 121,Tiếp tục thất bại hoặc nhận được thông báo lỗi vượt quá thời lượng cho phép.,Có cảnh báo từ 5 tới 120 phút,Thái,01/04/2026,Pass,,,
+CRQ-CRI-34,[Thời lượng] Kiểm tra nhập số 0,Đoán lỗi,Chức năng,"1. Điền thông tin cho ô Thời lượng là số 0 và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thời lượng: 0,Trường nhập liệu không cho phép số 0,Không cho phép nhập mỗi số 0,Thái,01/04/2026,Pass,,,
+CRQ-CRI-35,[Thời lượng] Kiểm tra nhập số âm ,Đoán lỗi,Chức năng,"1. Điền thông tin cho ô Thời lượng là số âm và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thời lượng: -10,"Trường nhập liệu chặn không cho gõ dấu trừ -, hoặc tiếp tục thất bại kèm thông báo lỗi ngoài khoảng cho phép.",Hệ thống cho phép nhập dấu -,Thái,01/04/2026,Fail,1,Cho phép nhập lên tới 2 dấu -,
+CRQ-CRI-36,[Thời lượng] Kiểm tra nhập số rất lớn,Đoán lỗi,Chức năng,"1. Điền thông tin cho ô Thời lượng là số rất lớn và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thời lượng: rất lớn,Nhận cảnh bảo hoặc chặn không cho đi tiếp,Khi số lớn tới 1 ngưỡng cảnh báo 5-120 phút sẽ bị mất tuy nhiên nút tiếp tục sẽ bị chặn,Thái,01/04/2026,Pass,,,
+CRQ-CRI-37,[Thẻ tag] Kiểm tra bỏ trống trường tùy chọn,Phân vùng tương đương,Chức năng,"1. Bỏ trống ô Thẻ tag và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",N/A,Tiếp tục thành công do đây là trường tùy chọn không bắt buộc.,Tiếp tục thành công,Thái,01/04/2026,N/A,,,
+CRQ-CRI-38,[Thẻ tag] Kiểm tra nhập dữ liệu hợp lệ,Phân vùng tương đương,Chức năng,"1. Điền thông tin cho ô Thẻ tag (một hoặc nhiều tag cách nhau bằng dấu phẩy) và nhập đúng các trường khác
+
+2. Nhấn tiếp tục","Thẻ tag: khoa học, tự nhiên","Tiếp tục thành công, thông tin thẻ tag được ghi nhận và hiển thị đúng trên hộp xem trước.",Tiếp tục thành công,Thái,01/04/2026,N/A,,,
+CRQ-CRI-39,[Thẻ tag] Kiểm tra nhập toàn khoảng trắng,Đoán lỗi,Chức năng,"1. Điền thông tin cho ô Thẻ tag toàn dấu cách và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thẻ tag: <Toàn cách>,"Tiếp tục thành công, nhưng hệ thống tự động loại bỏ (trim) các khoảng trắng này và coi như không có thẻ tag nào được thêm.","Tiếp tục thành công, nhưng do không có trong thông tin xem trước nên cần xem lại sau khi xuất bản",Thái,01/04/2026,N/A,,,
+CRQ-CRI-40,[Thẻ tag] Kiểm tra vượt quá độ dài tối đa,Giá trị biên,Chức năng,"1. Điền thông tin cho ô Thẻ tag bằng một chuỗi rất dài (vượt quá giới hạn ký tự cho phép của tag) và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thẻ tag: <Chuỗi rất dài>,"Tiếp tục thất bại hoặc nhận được thông báo lỗi vượt quá độ dài, hoặc trường nhập liệu chặn không cho gõ thêm.","Tiếp tục thành công, nhưng do không có trong thông tin xem trước nên cần xem lại sau khi xuất bản",Thái,01/04/2026,N/A,,"Khi đã xuất bản và xem lại thì xuất hiện tag rất dài, tràn khiến thanh cuộn ngang xuất hiện",
+CRQ-CRI-41,[Thẻ tag] Kiểm tra hiển thị văn bản dài trên hộp Xem trước,Kiểm thử GUI,UI/UX,"1. Điền thông tin cho ô Thẻ tag bằng một chuỗi cực dài không có dấu cách và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thẻ tag: <Chuỗi rất dài>,"Thông tin hiển thị không bị lỗi, các tag tự động xuống dòng hoặc hiển thị gọn gàng, không bị tràn ra ngoài hộp xem trước thông tin quiz.",Có bị tràn và xuất hiện thanh cuộn ngang,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-42,[Thẻ tag] Kiểm tra tiêm mã độc (XSS),Đoán lỗi,Bảo mật,"1. Điền mã script độc hại vào ô Thẻ tag và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",Thẻ tag: <script>alert('Lỗi')</script>,"Tiếp tục thành công nhưng mã HTML/JS bị vô hiệu hóa (sanitize), hiển thị dưới dạng văn bản thuần túy, không kích hoạt popup trên hệ thống.","Tiếp tục thành công, nhưng do không có trong thông tin xem trước nên cần xem lại sau khi xuất bản",Thái,01/04/2026,N/A,,,
+CRQ-CRI-43,[Ảnh bìa] Kiểm tra chuyển đổi giao diện giữa 2 tùy chọn,Chuyển đổi trạng thái,UI/UX,"1. Click chọn tùy chọn ""Tải ảnh lên""
+
+2. Sau đó click chuyển sang ""Nhập URL""",N/A,"Giao diện cập nhật tức thì: Khi chọn ""Tải ảnh lên"" sẽ hiện nút chọn file. Khi chọn ""Nhập URL"" nút chọn file biến mất, thay bằng ô textbox nhập link.",Giao diện có chuyển đổi thành công,Thái,01/04/2026,Pass,,,
+CRQ-CRI-44,[Ảnh bìa - Tải lên] Kiểm tra tải ảnh hợp lệ (Happy path),Phân vùng tương đương,Chức năng,"1. Chọn tùy chọn ""Tải ảnh lên"", chọn một file ảnh hợp lệ (dưới 3072KB) và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",File: hinh_anh.jpg (2MB),"Tiếp tục thành công, hình ảnh được tải lên và hiển thị đầy đủ, chính xác trên hộp xem trước thông tin quiz.",Tiếp tục thành công,Thái,01/04/2026,Pass,,,
+CRQ-CRI-45,[Ảnh bìa - Tải lên] Kiểm tra tải file vượt quá dung lượng tối đa,Giá trị biên,Chức năng,"1. Chọn tùy chọn ""Tải ảnh lên"", chọn một file ảnh có dung lượng lớn hơn 3072KB và nhập đúng các trường khác
+
+2. Nhấn tiếp tục (hoặc quan sát ngay khi chọn file)",File: anh_to.png (4MB),"Hệ thống chặn không cho tải lên, hiển thị thông báo lỗi ""Kích thước ảnh vượt quá 3072KB"". Tiếp tục thất bại.","Hệ thống không tải thành công, có thông báo lỗi tuy nhiên thông báo lỗi chỉ chớp nháy trong <1s, không đủ thời gian để đọc lỗi",Thái,01/04/2026,Fail,1,,
+CRQ-CRI-46,[Ảnh bìa - Tải lên] Kiểm tra tải file sai định dạng (Giả mạo đuôi),Kiểm thử tiêu cực,Bảo mật,"1. Chọn tùy chọn ""Tải ảnh lên"", chọn một file không phải là ảnh (vd: tệp thực thi, pdf) và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",File: virus.exe,"Hệ thống kiểm tra MIME type và từ chối tải lên, hiển thị thông báo lỗi file không đúng định dạng hình ảnh.","Hệ thống không tải thành công, có thông báo lỗi tuy nhiên thông báo lỗi chỉ chớp nháy trong <1s, không đủ thời gian để đọc lỗi",Thái,01/04/2026,Fail,1,,
+CRQ-CRI-47,[Ảnh bìa - Tải lên] Kiểm tra tải lên file rỗng (0 bytes),Đoán lỗi,Chức năng,"1. Chọn tùy chọn ""Tải ảnh lên"", chọn một file ảnh có dung lượng 0 byte và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",File: empty_img.jpg (0KB),"Hệ thống từ chối tải lên, báo lỗi tệp tin không hợp lệ hoặc bị hỏng.","Cho phép tải lên và cho phép preview, nhưng do thực chất không có dữ liệu nên chỉ có icon default",Thái,01/04/2026,Fail,1,,
+CRQ-CRI-48,[Ảnh bìa - URL] Kiểm tra nhập URL hợp lệ,Phân vùng tương đương,Chức năng,"1. Chọn tùy chọn ""Nhập URL"", điền một link ảnh (kết thúc bằng .jpg/.png) đang hoạt động và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",URL: https://domain.com/anh.jpg,"Tiếp tục thành công, hệ thống load được ảnh từ link và hiển thị trên hộp xem trước.",Thành công,Thái,01/04/2026,Pass,,,
+CRQ-CRI-49,[Ảnh bìa - URL] Kiểm tra nhập URL sai định dạng,Kiểm thử tiêu cực,Chức năng,"1. Chọn tùy chọn ""Nhập URL"", điền một chuỗi không phải định dạng link web và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",URL: <Toàn cách> hoặc day_khong_phai_link,Tiếp tục thất bại hoặc nhận được thông báo lỗi định dạng URL không hợp lệ.,Chỉ có icon default,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-50,[Ảnh bìa - URL] Kiểm tra nhập URL đúng định dạng nhưng link hỏng (Die),Đoán lỗi,Chức năng,"1. Chọn tùy chọn ""Nhập URL"", điền một link web hợp lệ nhưng không chứa ảnh hoặc ảnh đã bị xóa, và nhập đúng các trường khác
+
+2. Nhấn tiếp tục",URL: https://domain.com/anh_die.jpg,"Hiển thị một ảnh mặc định (Placeholder) thay thế cho ảnh bị lỗi, không làm crash form hay vỡ hộp xem trước.",Chỉ có icon default,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-51,[Ảnh bìa - Xem trước] Kiểm tra tỷ lệ khung hình ảnh hiển thị trên hộp Xem trước,Kiểm thử GUI,UI/UX,"1. Tải lên (hoặc nhập URL) một hình ảnh có kích thước/tỷ lệ cực dị (ví dụ: ảnh siêu dọc, hoặc độ phân giải 8K)
+
+2. Quan sát hộp xem trước",Ảnh có tỷ lệ: 100x2000px,"Ảnh phải tự động co giãn, cắt (crop) hoặc hiển thị vừa vặn trong vùng chứa của hộp xem trước, KHÔNG phá vỡ bố cục giao diện hay lấn sang các trường khác.",Hệ thống tự cắt ảnh,Thái,01/04/2026,Pass,,,
+CRQ-CRI-52,Kiểm tra trạng thái mặc định khi load form.,Tuân thủ giao diện (GUI),UI/UX,"1. Mở trang tạo quiz chứa form này
+
+2. Quan sát 2 ô checkbox Bảo mật quiz và Cài đặt bổ sung",N/A,Trạng thái mặc định của các checkbox nên được thiết lập hợp lý (thường là bỏ chọn - unchecked) theo đúng tài liệu thiết kế.,"Tích chọn hợp lý: Công khai, và cho làm lại",Thái,01/04/2026,N/A,,Không mô tả chi tiết trong tài liệu,
+CRQ-CRI-53,Kiểm tra chuyển đổi trạng thái khi click chuột (Toggle).,Chuyển đổi trạng thái,UI/UX,"1. Click vào ô checkbox Bảo mật quiz / Cài đặt bổ sung
+
+2. Click thêm lần nữa vào chính ô đó",N/A,Lần 1: Ô hiển thị dấu tích (Checked). Lần 2: Mất dấu tích (Unchecked). Không bị đơ hoặc lỗi UI.,"Chuyển đổi trạng thái thành công, đối với ô Quyền Riêng tư thì không thay đổi",Thái,01/04/2026,Fail,1,,
+CRQ-CRI-54,Kiểm tra thao tác bằng bàn phím (Accessibility).,Tuân thủ giao diện (GUI),UI/UX,"1. Dùng phím Tab di chuyển con trỏ đến ô checkbox
+
+2. Nhấn phím Space trên bàn phím",N/A,Phím Space phải đóng vai trò như thao tác click chuột: Tích/Bỏ tích checkbox thành công.,Có hỗ trợ,Thái,01/04/2026,Pass,,,
+CRQ-CRI-55,Kiểm tra logic hiển thị ô nhập mật khẩu.,Chuyển đổi trạng thái,UI/UX,1. Tích chọn vào ô Bảo mật quiz.,N/A,Trường nhập mật khẩu xuất hiện ngay bên dưới ô checkbox một cách mượt mà.,Có xuất hiện,Thái,01/04/2026,Pass,,,
+CRQ-CRI-56,Kiểm tra ràng buộc bắt buộc khi bật Bảo mật (Trường hợp lỗi).,Bảng quyết định (Decision Table),Chức năng,"1. Tích chọn Bảo mật quiz.
+
+2. Để trống ô mật khẩu vừa hiện ra.
+
+3. Nhấn Tiếp tục.",Mật khẩu: [Trống],"Tiếp tục thất bại, hệ thống báo lỗi yêu cầu nhập mật khẩu cho chế độ bảo mật.",Nút tiếp tục được ẩn đi,Thái,01/04/2026,Pass,,,
+CRQ-CRI-57,Kiểm tra giới hạn ký tự của mật khẩu bảo mật.,Giá trị biên (BVA),Chức năng,"1. Tích chọn Bảo mật quiz.
+
+2. Nhập mật khẩu vượt quá độ dài tối đa hoặc quá ngắn.
+
+3. Nhấn Tiếp tục.",Mật khẩu: <Chuỗi quá dài>,Tiếp tục thất bại hoặc hiển thị thông báo lỗi về độ dài mật khẩu quy định.,Cho phép ký tự rất dài,Thái,01/04/2026,Fail,1,,
+CRQ-CRI-58,Kiểm tra tạo quiz Bảo mật thành công.,Bảng quyết định,Chức năng,"1. Tích chọn Bảo mật quiz.
+
+2. Nhập mật khẩu hợp lệ.
+
+3. Nhấn Tiếp tục.",Mật khẩu: 123456,"Tiếp tục thành công, hộp xem trước hiển thị biểu tượng/trạng thái ""Riêng tư"".",Tiếp tục thành công,Thái,01/04/2026,Pass,,,
+CRQ-CRI-59,Kiểm tra giới hạn ký tự của mật khẩu bảo mật.,Giá trị biên (BVA),Chức năng,"1. Tích chọn Bảo mật quiz.
+
+2. Nhập mật khẩu vượt quá độ dài tối đa hoặc quá ngắn.
+
+3. Nhấn Tiếp tục.",Mật khẩu: 12345,Tiếp tục thất bại hoặc hiển thị thông báo lỗi về độ dài mật khẩu quy định.,Nhận cảnh báo mật khẩu 6 ký tự,Thái,01/04/2026,Pass,,,
+CRQ-CRI-60,Kiểm tra ràng buộc mật khẩu trắng,Kiểm thử tiêu cực,Chức năng,"1. Tích chọn Bảo mật quiz.
+
+2. Nhập mật khẩu vượt quá độ dài tối đa hoặc quá ngắn.
+
+3. Nhấn Tiếp tục.",Mật khẩu: toàn dấu cách/ trắng,Tiếp tục thất bại hoặc hiển thị thông báo lỗi ,Tiếp tục thành công,Thái,01/04/2026,Fail,1,,
+CRQ-QI-GE-01,Kiểm tra bỏ trống trường Giải thích (Tùy chọn).,ECP (Positive),Chức năng,"1. Không nhập gì vào ô giải thích, còn lại nhập đúng và đủ
+
+2. Nhấn tiếp tục",Giải thích: <Trống>,Cho phép tiếp tục,Cho phép,Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-02,Kiểm tra nhập toàn khoảng trắng vào ô Giải thích.,Đoán lỗi (Negative),Chức năng,"Như trên, khác dữ liệu cho ô giải thích",Giải thích: <Chuỗi toàn cách>,Có validate,"Cho phép tiếp tục, Hộp thoại cho phần giải thích vẫn xuất hiện nhưng không hiện gì",Thái,27/04/2026,Fail,1,,
+CRQ-QI-GE-03,Kiểm tra giới hạn ký tự tối đa của ô Giải thích.,BVA (Negative),Chức năng,"Như trên, khác dữ liệu cho ô giải thích",Giải thích: <Chuỗi rất dài>,Có validate,Cho phép tiếp tục,Thái,27/04/2026,Fail,1,"Hộp thoại hiện text rất dài, không cắt",
+CRQ-QI-GE-04,Kiểm tra độ co giãn UI khi text Giải thích siêu dài.,BVA (Negative),UI/UX,Như trên,Giải thích: <Chuỗi rất dài>,Giao diện không bị vỡ/ tràn,Xuất hiện thanh kéo dọc vô tận,Thái,27/04/2026,Fail,1,"Hộp thoại hiện text rất dài, không cắt vô tận",
+CRQ-QI-GE-05,Kiểm tra tiêm mã độc (XSS) vào ô Giải thích.,Đoán lỗi (Negative),Bảo mật,"Như trên, khác dữ liệu cho ô giải thích",Giải thích: <script>alert('Lỗi')</script>,"Tiếp tục thành công, không có thông báo lên màn hình",Thành công tuy nhiên ở giao diện không cho xem trước thông tin về phần giải thích đó,Thái,27/04/2026,N/A,1,,
+CRQ-QI-GE-06,Kiểm tra nhập dữ liệu Giải thích hợp lệ (Happy Path).,ECP (Positive),Chức năng,"Như trên, khác dữ liệu cho ô giải thích",Giải thích: Đây là 1 giải thích hợp lệ,Cho phép tiếp tục,Cho phép,Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-07,Kiểm tra bỏ trống trường Upload ảnh (Tùy chọn).,ECP (Positive),Chức năng,"1. Không nhập gì vào ô media cho ảnh, còn lại nhập đúng và đủ
+
+2. Nhấn tiếp tục",Ảnh giải thích: <Trống>,Cho phép tiếp tục,Cho phép,Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-08,Kiểm tra upload Ảnh hợp lệ (Happy Path).,ECP (Positive),Chức năng,"Như trên, khác dữ liệu cho ô media ảnh",Ảnh giải thích: File hợp lệ,Cho phép tiếp tục,"Ảnh bị lỗi mất, Không có thông báo ra giao diện, nhưng trong log có log DO NOT HAVE PERMISSION",Thái,27/04/2026,Fail,3,"3 lỗi do tương tự với các file còn lại, và ",
+CRQ-QI-GE-09,Kiểm tra upload file sai định dạng (Giả mạo đuôi).,ECP (Negative),Chức năng,"Như trên, khác dữ liệu cho ô media ảnh",Ảnh giải thích: File khác loại,Có thông báo lỗi hoặc không cho phép upload,"Không upload thành công, tuy nhiên không có thông báo lỗi trên giao diện, lỗi chỉ hiển thị trong Dev console",Thái,27/04/2026,Fail,3,,
+CRQ-QI-GE-10,Kiểm tra upload file vượt quá dung lượng tối đa.,BVA (Negative),Chức năng,"Như trên, khác dữ liệu cho ô media ảnh",Ảnh giải thích: File lớn hơn yêu cầu,Có thông báo lỗi hoặc không cho phép upload,"Không upload thành công, tuy nhiên không có thông báo lỗi trên giao diện, lỗi chỉ hiển thị trong Dev console",Thái,27/04/2026,Fail,3,,
+CRQ-QI-GE-11,Kiểm tra upload file rỗng (0 bytes).,BVA (Negative),Chức năng,"Như trên, khác dữ liệu cho ô media ảnh",Ảnh giải thích: File rỗng/ 0kb,Có thông báo lỗi hoặc không cho phép upload,"Không rõ có upload thành công hay không, không có thông báo.
+Vì ảnh rỗng nên cũng không có preview, tuy nhiên khi bấm hủy thì giao diện bị treo ở Đang tải lên - 0%",Thái,27/04/2026,Fail,3,,
+CRQ-QI-GE-12,Kiểm tra bỏ trống trường URL ảnh (Tùy chọn).,ECP (Positive),Chức năng,"1. Không nhập gì vào ô URL cho ảnh, còn lại nhập đúng và đủ
+
+2. Nhấn tiếp tục",URL: Trống,Cho phép tiếp tục,Cho phép,Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-13,Kiểm tra nhập toàn khoảng trắng vào URL.,Đoán lỗi (Negative),Chức năng,"Như trên, khác dữ liệu cho ô url ảnh",URL: Chuỗi toàn cách,"Cho phép tiếp tục, giao diện không hiển thị lên",Thành công,Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-14,Kiểm tra giới hạn độ dài của URL.,BVA (Negative),Chức năng,"Như trên, khác dữ liệu cho ô url ảnh",URL: Chuỗi rất dài,Khi không phải 1 URL thì không có media được thêm,Thành công,Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-15,Kiểm tra nhập URL hợp lệ (Happy Path).,ECP (Positive),Chức năng,"Như trên, khác dữ liệu cho ô url ảnh","URL: <url hợp lệ>, đuôi file cũng hợp lệ","Hiển thị lên preview, cho phép tiếp tục",Thành công,Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-16,Kiểm tra URL đúng định dạng nhưng không chứa ảnh.,Đoán lỗi (Negative),Chức năng,"Như trên, khác dữ liệu cho ô url ảnh",URL: <url hợp lệ> nhưng không dẫn tới file : google.com,Không hiển thị hoặc thông báo lỗi,"Hiển thị preview thành công, nhưng để trống tất cả dữ liệu ( DL rác )",Thái,27/04/2026,Fail,3,,
+CRQ-QI-GE-17,Kiểm tra bảo mật (XSS) qua giao thức giả mạo trên URL.,Đoán lỗi (Negative),Bảo mật,"Như trên, khác dữ liệu cho ô url ảnh",URL: javascript:alert('Hack_URL'),Không cho phép,"Cho phép, preview hiển thị, dev console có nhận được thông báo lỗi liên quan tới lệnh vừa nhập vào",Thái,27/04/2026,Fail,3,,
+CRQ-QI-GE-18,Kiểm tra bỏ trống nội dung câu hỏi bắt buộc.,ECP (Negative),Chức năng,"1. Nhấn vào Thêm câu hỏi
+
+2. Ở hộp chọn loại, chọn vào Trắc nghiệm
+
+3. Để trống Nội dung câu hỏi, còn lại nhập chính xác",Nội dung câu hỏi: Trống,Không cho phép tiếp tục hoặc nhận thông báo lỗi,Nút tiếp tục bị ẩn đi,Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-19,Kiểm tra hiển thị chỉ dẫn trường bắt buộc.,Đoán lỗi (Negative),UI/UX,Như trên,Nội dung câu hỏi: Trống,"Cần có thông báo yêu cầu trường nào là bắt buộc, trường nào tùy chọn","Không có thông báo, cũng không có dấu * yêu cầu đâu là trường bắt buộc",Thái,27/04/2026,Fail,3,"3 Do lỗi ở các trường điểm, đáp án, nội dung câu hỏi",
+CRQ-QI-GE-20,Kiểm tra nhập toàn khoảng trắng vào câu hỏi.,Đoán lỗi (Negative),Chức năng,"Như trên, khác nội dung câu hỏi",Nội dung câu hỏi: Toàn cách,Không cho phép tiếp tục hoặc nhận thông báo lỗi,"Cho phép tiếp tục, giao diện hiển thị trắng",Thái,27/04/2026,Fail,1,,
+CRQ-QI-GE-21,Kiểm tra giới hạn độ dài tối đa (Logic nghiệp vụ).,BVA (Negative),Chức năng,"Như trên, khác nội dung câu hỏi",Nội dung câu hỏi: Chuỗi rất dài,Không cho phép tiếp tục hoặc nhận thông báo lỗi,Cho phép tiếp tục,Thái,27/04/2026,Fail,1,,
+CRQ-QI-GE-22,Kiểm tra hiển thị chuỗi siêu dài trên giao diện.,BVA (Negative),UI/UX,Như trên,Nội dung câu hỏi: Chuỗi rất dài,Không cho phép tiếp tục hoặc nhận thông báo lỗi,"Cho phép tiếp tục, giao diện cuộn vô tận nếu chuỗi rất dài",Thái,27/04/2026,Fail,1,,
+CRQ-QI-GE-23,Kiểm tra tấn công mã độc (XSS) qua nội dung.,Đoán lỗi (Negative),Bảo mật,"Như trên, khác nội dung câu hỏi",Nội dung câu hỏi: javascript:alert('Hack_URL')/ <script>alert('Lỗi')</script>,Không bị thực thi mã độc,"Thành công, không bị thực thi",Thái,27/04/2026,Fail,1,,
+CRQ-QI-GE-24,Kiểm tra nhập nội dung hợp lệ (Happy Path).,ECP (Positive),Chức năng,"Như trên, khác nội dung câu hỏi",Nội dung câu hỏi: Đây là câu hỏi 1,Tiếp tục thành công,Tiếp tục thành công,Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-25,Kiểm tra bỏ trống điểm số bắt buộc.,ECP (Negative),Chức năng,"1. Nhấn vào Thêm câu hỏi
+
+2. Ở hộp chọn loại, chọn vào Trắc nghiệm
+
+3. Để trống Điểm, còn lại nhập chính xác",Điểm: Trống,Không cho phép tiếp tục hoặc nhận thông báo lỗi,Nút tiếp tục bị ẩn đi,Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-26,Kiểm tra giá trị điểm tối thiểu (Điểm 0).,BVA (Negative),Chức năng,"Như trên, khác điểm",Điểm: 0,Không cho phép tiếp tục hoặc nhận thông báo lỗi,Không cho phép nhập số 0,Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-27,Kiểm tra giá trị điểm âm (Dưới biên).,BVA (Negative),Chức năng,"Như trên, khác điểm",Điểm: -1,Không cho phép tiếp tục hoặc nhận thông báo lỗi,"Cho phép nhập -1, tuy nhiên không cho phép tiếp tục",Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-28,Kiểm tra nhập số thập phân vào điểm.,Đoán lỗi (Negative),Chức năng,"Như trên, khác điểm",Điểm: 1.5,N/A,"Cho phép nhập dấu ., nhưng khi nhập phần thập phân thì bị tự động xóa",Thái,27/04/2026,N/A,,"Không đánh giá, do không thấy yêu cầu về điểm phải là số nguyên",
+CRQ-QI-GE-29,Kiểm tra nhập ký tự chữ cái/ký hiệu vào điểm.,Đoán lỗi (Negative),Chức năng,"Như trên, khác điểm",Điểm: abc,Không cho phép tiếp tục hoặc nhận thông báo lỗi,Không cho phép nhập chữ tuy nhiên cho phép nhập 1 số ký hiệu toán học,Thái,27/04/2026,Fail,1,,
+CRQ-QI-GE-30,Kiểm tra giá trị điểm vượt ngưỡng (Tràn số).,BVA (Negative),Chức năng,"Như trên, khác điểm",Điểm: số rất lớn,Không cho phép tiếp tục hoặc nhận thông báo lỗi,"Cho phép nhập, tuy nhiên không cho phép tiếp tục",Thái,27/04/2026,Pass,,,
+CRQ-QI-GE-31,Kiểm tra nhập điểm hợp lệ (Happy Path).,ECP (Positive),Chức năng,"Như trên, khác điểm",Điểm: 10,Cho phép tiếp tục,Cho phép tiếp tục,Thái,27/04/2026,Pass,,,
+CRQ-QI-00,Kiểm tra đáp án khác nhau,ECP (Negative),Chức năng,Cho tất cả đáp án giống nhau,Tất cả đáp án: Thái,Không cho phép tiếp tục hoặc nhận thông báo lỗi,Cho phép tiếp tục,,,Fail,1,,
+CRQ-QI-01,Kiểm tra chặn người dùng khi bỏ trống tất cả đáp án.,ECP (Negative),Chức năng,Bỏ trống tất cả đáp án,Tất cả đáp án: Trống,Không cho phép tiếp tục hoặc nhận thông báo lỗi,Nút tiếp tục bị ẩn đi,,,Pass,,,
+CRQ-QI-02,Kiểm tra chặn người dùng khi bỏ trống 1 đáp án bất kỳ.,ECP (Negative),Chức năng,Bỏ trống 1 đáp án,A: Trống,Không cho phép tiếp tục hoặc nhận thông báo lỗi,Nút tiếp tục bị ẩn đi,,,Pass,,,
+CRQ-QI-03,Kiểm tra giới hạn số lượng đáp án tối thiểu.,BVA (Negative),Chức năng,Xóa hết đáp án,N/A,Không cho phép tiếp tục hoặc nhận thông báo lỗi,"Không cho phép xóa, tối thiểu 2 đáp án, và 1 đáp án đúng",,,Pass,,,
+CRQ-QI-04,Kiểm tra giới hạn số lượng đáp án tối đa.,BVA (Negative),Chức năng,Thêm nhiều đáp án,N/A,Thông báo giới hạn cho phép,Cho phép thêm vô hanj,,,Fail,1,,
+CRQ-QI-05,Kiểm tra hiển thị UI khi người dùng tạo quá nhiều đáp án.,BVA (Negative),UI/UX,Thêm nhiều đáp án,N/A,"Thông báo giới hạn cho phép, hoặc giao diện không bị tràn",Giao diện xuất hiện thanh cuộn vô hạn khi có quá nhiều đáp án,,,Fail,1,,
+CRQ-QI-06,Kiểm tra nhập toàn khoảng trắng vào 1 đáp án.,Đoán lỗi (Negative),Chức năng,Điền toàn cách cho 1 đáp án,A: Toàn cách,Không cho phép tiếp tục hoặc nhận thông báo lỗi,"Cho phép, giao diện hiện rỗng",,,Fail,1,,
+CRQ-QI-07,Kiểm tra giới hạn độ dài ký tự tối đa của 1 đáp án.,BVA (Negative),Chức năng,Như trên nhưng khác dữ liệu,A: Chuỗi rất dài,Thông báo giới hạn cho phép,Cho phép,,,Fail,1,,
+CRQ-QI-08,Kiểm tra độ co giãn giao diện khi nội dung 1 đáp án siêu dài.,BVA (Negative),UI/UX,Như trên,A: Chuỗi rất dài,Thông báo giới hạn cho phép,Giao diện xuất hiện thanh cuộn vô hạn khi 1 đáp án có nội dung quá dài,,,Fail,1,,
+CRQ-QI-09,Kiểm tra tiêm mã độc (XSS) vào trường đáp án.,Đoán lỗi (Negative),Bảo mật,Như trên nhưng khác dữ liệu,A: javascript:alert('Hack_URL')/ <script>alert('Lỗi')</script>,Không thực thi mã,Không thực thi,,,Pass,,,
+CRQ-QI-10,Kiểm tra tạo đáp án hợp lệ hoàn chỉnh (Happy Path).,ECP (Positive),Chức năng,Điền vào đáp án hợp lệ,"Các đáp án hợp lệ, có đáp án đúng",Tiếp tục thành công,Tiếp tục thành công,,,Pass,,,
+CRQ-QI-11,Kiểm tra quên không đánh dấu đáp án đúng.,Đoán lỗi (Negative),Chức năng,Như trên nhưng khác dữ liệu,"Các đáp án hợp lệ, không chọn đáp án đúng",Thông báo lỗi hoặc bị chặn,Nút tiếp tục bị ẩn đi,,,Pass,,,
+CRQ-QI-12,Kiểm tra kịch bản chuẩn,ECP,Chức năng,Chọn vào 1 trong 2 radio đúng/ sai,Radio: Đúng,"Tiếp tục thành công, hiển thị đúng",Thành công,,,Pass,,,
+CRQ-QI-13,Kiểm tra bỏ trống trường đáp án chính.,ECP (Negative),Chức năng,Bỏ trống đáp án,Đáp án: Trống,Không cho phép tiếp tục hoặc nhận thông báo lỗi,Nút tiếp tục bị ẩn,,,Pass,,,
+CRQ-QI-14,Kiểm tra nhập toàn khoảng trắng vào đáp án chính.,Đoán lỗi (Negative),Chức năng,Nhập vào toàn cách,Đáp án: Toàn cách,Không cho phép tiếp tục hoặc nhận thông báo lỗi,"Cho phép tiếp tục, đáp án trống",,,Fail,1,,
+CRQ-QI-15,Kiểm tra giới hạn độ dài ký tự tối đa của đáp án.,BVA (Negative),Chức năng,Nhập vào chuỗi rất dài cho đáp án,Đáp án: Chuỗi rất dài,Không cho phép tiếp tục hoặc nhận thông báo lỗi,"Cho phép tiếp tục, đáp án dài vô tận",,,Fail,1,,
+CRQ-QI-16,Kiểm tra độ co giãn UI khi đáp án chính siêu dài.,BVA (Negative),UI/UX,Nhập vào chuỗi rất dài cho đáp án,Đáp án: Chuỗi rất dài,"Thông báo giới hạn cho phép, hoặc giao diện không bị tràn","Tràn giao diện, xuất hiện thanh cuộn ngang",,,Fail,1,,
+CRQ-QI-17,Kiểm tra tiêm mã độc (XSS) vào trường đáp án.,Đoán lỗi (Negative),Bảo mật,"Như trên, khác dữ liệu",Đáp án: javascript:alert('Hack_URL')/ <script>alert('Lỗi')</script>,Không thực thi mã,Không thực thi mã,,,Pass,,,
+CRQ-QI-18,Kiểm tra nhập đáp án chính hợp lệ (Happy Path).,ECP (Positive),Chức năng,"Như trên, khác dữ liệu",Đáp án: Đây là 1 đáp án đúng,Thành công,Thành công,,,Pass,,,
+CRQ-QI-19,Kiểm tra thêm biến thể (đáp án thay thế) rỗng.,ECP (Negative),Chức năng,Bấm vào thêm biến thể và bỏ trống,Biến thể: Trống,Nhận thông báo lỗi,"Không có thông báo lỗi, tuy nhiên biến thể không được thêm vào",,,Pass,,,
+CRQ-QI-20,Kiểm tra thêm biến thể chỉ chứa khoảng trắng.,Đoán lỗi (Negative),Chức năng,"Như trên, khác dữ liệu",Biến thể: Toàn cách,Nhận thông báo lỗi,"Không có thông báo lỗi, tuy nhiên biến thể không được thêm vào",,,Pass,,,
+CRQ-QI-21,Kiểm tra giới hạn độ dài tối đa của biến thể.,BVA (Negative),Chức năng,"Như trên, khác dữ liệu",Biến thể: Chuỗi rất dài,Nhận thông báo lỗi,Cho phép thêm,,,Fail,1,,
+CRQ-QI-22,Kiểm tra UI khi nội dung biến thể siêu dài.,BVA (Negative),UI/UX,Như trên,Biến thể: Chuỗi rất dài,Nhận thông báo lỗi,"Cho phép thêm, giao diện tràn ngang",,,Fail,1,,
+CRQ-QI-23,Kiểm tra thêm biến thể hợp lệ.,ECP (Positive),Chức năng,"Như trên, khác dữ liệu",Biến thể: Đây là 1 biến thể,Cho phép tiếp tục,Thành công,,,Pass,,,
+CRQ-QI-24,Kiểm tra giới hạn số lượng biến thể tối đa.,BVA (Negative),Chức năng,Thêm rất nhiều biến thể,N/A,Không cho phép thêm không giới hạn,Cho phép thêm không giới hạn biến thể,,,Fail,1,,
+CRQ-QI-25,Kiểm tra UI khi danh sách biến thể quá nhiều.,BVA (Negative),UI/UX,Thêm rất nhiều biến thể,N/A,"Không cho phép thêm không giới hạn, giao diện không bị tràn",Giao diện kéo dài vô tận,,,Fail,1,,
+CRQ-QI-26,Kiểm tra ràng buộc phải có ít nhất một đáp án đúng cho câu hỏi nhiều lựa chọn.,Đoán lỗi (Negative),Chức năng,Không chọn đáp án nào đúng,N/A,Không cho phép tiếp tục,Nút tiếp tục bị ẩn đi,,,Pass,,,
+CRQ-QI-27,Xác minh khả năng thiết lập nhiều đáp án đúng đồng thời cho một câu hỏi.,Phân vùng tương đương (Positive),Chức năng,Chọn nhiều đáp án đúng,N/A,Tiếp tục thành công,Tiếp tục thành công,,,Pass,,,
+CRQ-QI-28,Kiểm tra chặn tiếp tục khi văn bản không chứa thẻ đánh dấu vùng trống.,ECP (Negative),Chức năng,"1. Nhập vào văn bản không có chứa cặp blank như hướng dẫn
+
+2. Bấm phân tích chỗ trống
+
+3. Bấm tiếp tục",Văn bản: abc,Không cho phép tiếp tục,Nút tiếp tục bị ẩn đi,,,Pass,,,
+CRQ-QI-29,Kiểm tra xử lý khi nội dung bên trong cặp thẻ rỗng.,Đoán lỗi (Negative),Chức năng,"1. Nhập vào văn bản có chứa cặp blank như hướng dẫn
+
+2. Bấm phân tích chỗ trống
+
+3. Bấm tiếp tục",Văn bản: {{}},Không cho phép tiếp tục,Tiếp tục thành công,,,Fail,2,2 do chỗ trống cũng cho phép bỏ trống,
+CRQ-QI-30,Kiểm tra khả năng reset trạng thái (State) khi xóa bỏ thẻ đánh dấu.,Chuyển đổi trạng thái (Negative),Chức năng,"Như trên, nhưng thêm bước: sau khi xóa văn bản chứa blank, thêm lại văn bản khác không chứa blank vào",Văn bản: {{}} --> abc,Cập nhật hiển thị thành công,"Văn bản là abc - không có chỗ trống, nhưng lại có đáp án cho vùng trống",,,Fail,1,,
+CRQ-QI-31,Kiểm tra tính chính xác của văn bản hướng dẫn sử dụng trên UI.,Tuân thủ giao diện,UI/UX,N/A,N/A,Hướng dẫn là cặp ngoặc vuông cho blank,Cặp ngoặc đúng là 2 dấu nhọn,,,Fail,1,,
+CRQ-QI-32,Kiểm tra khả năng đồng bộ (Re-analyze) khi tăng thêm số lượng chỗ trống.,Chuyển đổi trạng thái (Negative),Chức năng,"1. Nhập vào văn bản có chứa cặp blank như hướng dẫn
+
+2. Bấm phân tích chỗ trống
+
+3. Đổi dữ liệu văn bản
+
+4. Bấm tiếp tục","Văn bản: He is {{ a man }}
+
+->> He is {{ a man }} - {{ a }}",Cập nhật hiển thị thành công,Văn bản có 2 chỗ trống tuy nhiên chỉ có 1 đáp án cho 1 chỗ trống,,,Fail,1,,
+CRQ-QI-33,Kiểm tra luồng phân tích và tạo câu hỏi điền từ hợp lệ (Happy Path).,ECP (Positive),Chức năng,Nhập vào trường hợp hợp lệ,Văn bản: He is {{ a man }},"Thành công, hiển thị đúng","Thành công, hiển thị đúng",,,Pass,,,
+CRQ-UP-01,,ECP,Chức năng,1. Bấm vào biểu tượng chỉnh sửa ở Dash của người tạo,N/A,Có thể bắt đầu chỉnh sửa ,Lỗi: Unauthorize với role : Người tạo,,,Fail,1,,
+CRQ-UP-02,,ECP,Chức năng,1. Bấm vào biểu tượng chỉnh sửa ở Dash của Admin,N/A,Có thể bắt đầu chỉnh sửa ,Có thể bắt đầu chỉnh sửa ,,,Pass,,,
+CRQ-UP-03,,ECP,Chức năng,"Sửa trường tùy chọn bất kỳ, các trường khác giữ nguyên và nhấn lưu",Tiêu đề: <> + update,Lưu thành công,"Lưu thất bại, lỗi chớp nháy trong < 1s",,,Fail,2,"Ngoài lỗi nêu ra, còn bị tag tự động update khi nhấn vào màn hình update",
+CRQ-DRF-01,Kiểm thử chức năng xuất bản,Chuyển đổi trạng thái,Chức năng,"1. Về trang quiz của tôi 
+
+2. Nhấn vào icon xuất bản",,Hệ thống báo thành công,"Hệ thống chớp nháy thông tin về lỗi, tuy nhiên sau khi tải lại trang thì trạng thái đã được chuyển đổi thành chờ duyệt",Thái,04/04/2026,Fail,,,

@@ -6,10 +6,7 @@
  * TESTER: Thịnh
  * TC IDs: TC-A-STR-01 -> TC-A-STR-07
  * ============================================================
- * LƯU Ý CHO GIẢNG VIÊN ĐÁNH GIÁ: 
- * - Đây là mảng Client State (Redux), không chạm tới Database Firebase.
- * - Triết lý Unit Test ở đây áp dụng kỹ thuật "State Transition Testing" (Kiểm thử Chuyển đổi Trạng thái)
- *   và "Dirty State Reset Testing" (Kiểm tra Khả năng dọn rác/lỗi cũ của hệ thống).
+ * 
  * ============================================================
  */
 

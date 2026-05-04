@@ -7,14 +7,7 @@
  * TESTER: Thịnh
  * TC IDs: TC-A-SRV-01 -> TC-A-SRV-22
  * ============================================================
- * TỔNG QUAN PHƯƠNG PHÁP KIỂM THỬ (DÀNH CHO GIẢNG VIÊN ĐÁNH GIÁ):
- * - Project QuizApp này uỷ quyền hệ thống Đăng nhập (Authentication) cho Firebase.
- * - Triết lý Unit Test: Việc test tính đúng sai của Database/Mật khẩu là trách nhiệm 
- *   của Server Google. Nhiệm vụ của Unit Test nội bộ là: KIỂM CHỨNG CÁC LUỒNG XỬ LÝ 
- *   TRẢ VỀ/QUĂNG LỖI BÊN TRONG CÁC HÀM CỦA PROJECT CÓ HOẠT ĐỘNG ĐÚNG KỊCH BẢN HAY KHÔNG.
- * - Giải pháp: Tách rời kết nối mạng bằn kỹ thuật Mocking. Sử dụng `vi.mock()` để giả lập 
- *   các Object và Exception mà Firebase sẽ ném ra, từ đó ép các nhánh (Branch) báo lỗi
- *   tiếng Việt của project phải thực thi.
+ * 
  * ============================================================
  */
 

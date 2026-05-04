@@ -6,17 +6,7 @@
  * TESTER: Thịnh
  * LƯU Ý VỀ DB: Mock Firestore query/getDocs để render ra danh sách.
  * ============================================================
- * LƯU Ý DÀNH CHO GIẢNG VIÊN ĐÁNH GIÁ:
- * 1. CHIẾN LƯỢC TEST (Component-Level Integration Test): 
- *    Nhóm không bóc tách hàm logic ra file API riêng biệt để "lách luật" tăng Coverage ảo.
- *    Thay vào đó, nhóm chọn cách Test trực tiếp trên Component thật (AdminQuizManagement.tsx) 
- *    để bảo toàn Kiến trúc nguyên bản của dự án.
- * 2. GIẢI TRÌNH ĐỘ BAO PHỦ (COVERAGE ~48%):
- *    Coverage thấp là CÓ CHỦ ĐÍCH (By Design). Nhóm chỉ tập trung 100% vào việc giả lập hành vi
- *    Click Chuột (fireEvent) để kích hoạt các hàm lõi (như handleApprove, handleReject) 
- *    nhằm xác nhận dữ liệu đẩy lên Firestore (updateDoc) là chính xác.
- *    Nhóm từ chối viết Unit Test ép render các thẻ DOM (div, span, màu sắc CSS...) vì 
- *    nó rất lãng phí tài nguyên và đã được kiểm chứng tuyệt đối bằng System Test.
+ * 
  * ============================================================
  */
 import React from 'react';
